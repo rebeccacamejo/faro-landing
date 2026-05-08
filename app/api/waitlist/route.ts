@@ -147,19 +147,28 @@ export async function POST(req: NextRequest) {
 
   const timestamp = new Date().toISOString();
 
-  // ── Local backup (fire-and-forget; don't block the response) ───────────────
-  try {
-    const entry = JSON.stringify({
-      email: cleanEmail,
-      business: cleanBusiness,
-      audience: cleanAudience,
-      timestamp,
-      ip,
-    });
-    appendFileSync(join(process.cwd(), "waitlist-backup.jsonl"), entry + "\n", "utf8");
-  } catch (err) {
-    // Non-fatal — log and continue
-    console.error("[waitlist] backup write failed:", err);
+  // ── Local backup / structured log ────────────────────────────────────────
+  // On Vercel the filesystem is read-only; log as JSON so the entry is
+  // captured in runtime logs. Locally, also append to the JSONL file.
+  const entry = {
+    email: cleanEmail,
+    business: cleanBusiness,
+    audience: cleanAudience,
+    timestamp,
+    ip,
+  };
+  console.log("[waitlist:signup]", JSON.stringify(entry));
+
+  if (!process.env.VERCEL) {
+    try {
+      appendFileSync(
+        join(process.cwd(), "waitlist-backup.jsonl"),
+        JSON.stringify(entry) + "\n",
+        "utf8",
+      );
+    } catch (err) {
+      console.error("[waitlist] local backup write failed:", err);
+    }
   }
 
   // ── Send emails via Resend ─────────────────────────────────────────────────
