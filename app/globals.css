@@ -2,26 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    @apply bg-cream text-charcoal antialiased font-sans;
   }
-}
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
+  h1,
+  h2,
+  h3 {
+    @apply text-navy font-serif;
+  }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  a {
+    @apply text-terracotta underline-offset-4 hover:underline;
   }
 }
