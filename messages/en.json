@@ -1,0 +1,69 @@
+{
+  "metadata": {
+    "title": "Faro — AI Visibility for Your Business",
+    "description": "Faro tracks how AI agents recommend your business across ChatGPT, Claude, Perplexity, and Gemini — and makes sure you're the one they pick."
+  },
+  "nav": {
+    "howItWorks": "How it works",
+    "forAdvisors": "For advisors",
+    "signIn": "Sign in",
+    "joinWaitlist": "Join waitlist",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "homeLabel": "Faro home",
+    "primaryNav": "Primary navigation",
+    "mobileNav": "Mobile navigation"
+  },
+  "hero": {
+    "headline": "We make sure ChatGPT recommends your business.",
+    "subhead": "Faro tracks how AI agents recommend small and mid-sized businesses across ChatGPT, Claude, Perplexity, and Gemini — then makes sure your business is the one they pick. Built for South Florida. In English and Español.",
+    "cta": "Join the waitlist",
+    "advisorLink": "For CPAs and advisors →"
+  },
+  "problem": {
+    "heading": "Your customers are asking AI who to hire. You want to be the answer.",
+    "para1": "About one in ten searches in the US now happen on AI platforms instead of Google. That number is growing every month. Your customers are already asking ChatGPT, “Who’s a good accountant near me?” or “What’s the best HVAC company in Miami?” before they ever open a browser tab.",
+    "para2": "AI doesn’t return ten blue links. It reads its sources, forms an opinion, and names one or two businesses. If you’re not in that answer, you don’t exist — no matter how good your Google reviews are.",
+    "para3": "Most local and mid-sized businesses have no idea whether they’re showing up in AI recommendations. There are no reports, no dashboards, no alerts. Faro changes that."
+  },
+  "howItWorks": {
+    "heading": "How Faro works.",
+    "step1": {
+      "heading": "We track",
+      "body": "We monitor every major AI agent — ChatGPT, Claude, Perplexity, Gemini — for the questions your customers actually ask. We see when you appear, when competitors appear, and which sources AI is citing."
+    },
+    "step2": {
+      "heading": "We optimize",
+      "body": "We write and publish content that AI agents trust. We get your business into the directories, listicles, and review sites that AI cites most. Done for you — in English and Spanish."
+    },
+    "step3": {
+      "heading": "We report",
+      "body": "Every month, you and your CPA get a two-page report showing exactly where you stand. No dashboards to learn. No marketing jargon. Just whether AI is recommending you more than last month."
+    }
+  },
+  "forAdvisors": {
+    "heading": "Are you a CPA or trusted advisor?",
+    "para1": "Faro is built to be offered through advisor relationships. Your clients trust you with their finances, their taxes, and increasingly their business strategy. AI visibility is the next frontier — and it’s one they’ll need help navigating.",
+    "para2": "Partner firms get co-branded monthly reports, a revenue share on every client they refer, and the option to lock in exclusive territory coverage for their market. We handle everything — you stay the trusted advisor.",
+    "cta": "Become a partner"
+  },
+  "waitlist": {
+    "heading": "Join the waitlist.",
+    "subhead": "We’re onboarding our first ten Miami pilot clients. Be one of them.",
+    "emailPlaceholder": "you@yourbusiness.com",
+    "businessPlaceholder": "What’s your business? (optional)",
+    "audienceBusiness": "I’m a business owner",
+    "audienceAdvisor": "I’m a CPA or advisor",
+    "submit": "Join waitlist",
+    "submitting": "Submitting…",
+    "confirmationHeading": "We’ll be in touch.",
+    "confirmationBody": "You’re on the list. We’ll reach out within a week.",
+    "networkError": "Network error — please check your connection and try again."
+  },
+  "footer": {
+    "tagline": "Faro · Miami, FL ·",
+    "email": "hello@heyfaro.com",
+    "languageToggle": "English / Español",
+    "languageToggleLabel": "Switch to Spanish"
+  }
+}

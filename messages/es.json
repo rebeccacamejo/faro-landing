@@ -1,0 +1,69 @@
+{
+  "metadata": {
+    "title": "Faro — Visibilidad en IA para tu negocio",
+    "description": "Faro rastrea cómo los agentes de IA recomiendan tu negocio en ChatGPT, Claude, Perplexity y Gemini — y se asegura de que seas el elegido."
+  },
+  "nav": {
+    "howItWorks": "Cómo funciona",
+    "forAdvisors": "Para asesores",
+    "signIn": "Iniciar sesión",
+    "joinWaitlist": "Únete a la lista",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú",
+    "homeLabel": "Inicio de Faro",
+    "primaryNav": "Navegación principal",
+    "mobileNav": "Navegación móvil"
+  },
+  "hero": {
+    "headline": "Hacemos que ChatGPT recomiende tu negocio.",
+    "subhead": "Faro rastrea cómo los agentes de IA recomiendan negocios pequeños y medianos en ChatGPT, Claude, Perplexity y Gemini — y se asegura de que el tuyo sea el que elijan. Hecho en el sur de Florida. En inglés y español.",
+    "cta": "Únete a la lista",
+    "advisorLink": "Para CPAs y asesores →"
+  },
+  "problem": {
+    "heading": "Tus clientes le están preguntando a la IA a quién contratar. Tú quieres ser la respuesta.",
+    "para1": "Cerca del diez por ciento de las búsquedas en EE. UU. ya ocurren en plataformas de IA en lugar de Google. Ese número crece mes a mes. Tus clientes ya le preguntan a ChatGPT: “¿Quién es un buen contador cerca de mí?” o “¿Cuál es la mejor empresa de HVAC en Miami?” — antes de abrir siquiera el navegador.",
+    "para2": "La IA no devuelve diez enlaces azules. Lee sus fuentes, forma una opinión y nombra uno o dos negocios. Si no apareces en esa respuesta, no existes — sin importar cuántas reseñas de Google tengas.",
+    "para3": "La mayoría de los negocios locales y medianos no saben si están apareciendo en las recomendaciones de IA. No hay reportes, ni paneles, ni alertas. Faro cambia eso."
+  },
+  "howItWorks": {
+    "heading": "Cómo funciona Faro.",
+    "step1": {
+      "heading": "Rastreamos",
+      "body": "Monitoreamos todos los principales agentes de IA — ChatGPT, Claude, Perplexity, Gemini — con las preguntas que realmente hacen tus clientes. Vemos cuándo apareces tú, cuándo aparece la competencia, y qué fuentes está citando la IA."
+    },
+    "step2": {
+      "heading": "Optimizamos",
+      "body": "Escribimos y publicamos contenido en el que confían los agentes de IA. Posicionamos tu negocio en los directorios, listicles y sitios de reseñas que la IA cita con más frecuencia. Todo incluido — en inglés y español."
+    },
+    "step3": {
+      "heading": "Reportamos",
+      "body": "Cada mes, tú y tu contador reciben un reporte de dos páginas que muestra exactamente dónde estás parado. Sin paneles que aprender. Sin jerga de marketing. Solo si la IA te está recomendando más que el mes pasado."
+    }
+  },
+  "forAdvisors": {
+    "heading": "¿Eres CPA o asesor de confianza?",
+    "para1": "Faro está diseñado para ofrecerse a través de relaciones de asesoría. Tus clientes confían en ti con sus finanzas, sus impuestos y, cada vez más, su estrategia de negocio. La visibilidad en IA es la próxima frontera — y una en la que necesitarán orientación.",
+    "para2": "Las firmas asociadas reciben reportes co-brandados mensuales, participación en los ingresos por cada cliente referido y la opción de asegurar cobertura exclusiva de territorio en su mercado. Nosotros nos encargamos de todo — tú sigues siendo el asesor de confianza.",
+    "cta": "Convértete en socio"
+  },
+  "waitlist": {
+    "heading": "Únete a la lista de espera.",
+    "subhead": "Estamos incorporando a nuestros primeros diez clientes piloto en Miami. Sé uno de ellos.",
+    "emailPlaceholder": "tu@tunegocio.com",
+    "businessPlaceholder": "¿Cuál es tu negocio? (opcional)",
+    "audienceBusiness": "Soy dueño de negocio",
+    "audienceAdvisor": "Soy CPA o asesor",
+    "submit": "Únete",
+    "submitting": "Enviando…",
+    "confirmationHeading": "Estaremos en contacto.",
+    "confirmationBody": "Estás en la lista. Te contactaremos en una semana.",
+    "networkError": "Error de red — verifica tu conexión e intenta de nuevo."
+  },
+  "footer": {
+    "tagline": "Faro · Miami, FL ·",
+    "email": "hello@heyfaro.com",
+    "languageToggle": "English / Español",
+    "languageToggleLabel": "Cambiar al inglés"
+  }
+}

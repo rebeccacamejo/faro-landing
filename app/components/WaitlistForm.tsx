@@ -1,10 +1,12 @@
 "use client";
 
 import { useState, useRef } from "react";
+import { useTranslations } from "next-intl";
 
 type Status = "idle" | "loading" | "success" | "error";
 
 export default function WaitlistForm() {
+  const t = useTranslations("waitlist");
   const [audience, setAudience] = useState<"business" | "advisor">("business");
   const [status, setStatus] = useState<Status>("idle");
   const [errorMsg, setErrorMsg] = useState("");
@@ -36,7 +38,7 @@ export default function WaitlistForm() {
 
       setStatus("success");
     } catch {
-      setErrorMsg("Network error — please check your connection and try again.");
+      setErrorMsg(t("networkError"));
       setStatus("error");
     }
   }
@@ -45,10 +47,10 @@ export default function WaitlistForm() {
     return (
       <div className="text-center py-8">
         <h3 className="font-serif text-4xl text-cream mb-4">
-          We&rsquo;ll be in touch.
+          {t("confirmationHeading")}
         </h3>
         <p className="font-sans text-cream/70 text-lg">
-          You&rsquo;re on the list. We&rsquo;ll reach out within a week.
+          {t("confirmationBody")}
         </p>
       </div>
     );
@@ -57,7 +59,11 @@ export default function WaitlistForm() {
   const loading = status === "loading";
 
   return (
-    <form onSubmit={handleSubmit} className="w-full max-w-lg mx-auto space-y-4" noValidate>
+    <form
+      onSubmit={handleSubmit}
+      className="w-full max-w-lg mx-auto space-y-4"
+      noValidate
+    >
       <div>
         <label htmlFor="email" className="sr-only">
           Email address
@@ -69,7 +75,7 @@ export default function WaitlistForm() {
           type="email"
           required
           autoComplete="email"
-          placeholder="you@yourbusiness.com"
+          placeholder={t("emailPlaceholder")}
           disabled={loading}
           className="w-full px-5 py-4 rounded-md bg-cream text-charcoal placeholder:text-navy/50 font-sans text-lg focus:outline-none focus:ring-2 focus:ring-terracotta disabled:opacity-60"
         />
@@ -77,7 +83,7 @@ export default function WaitlistForm() {
 
       <div>
         <label htmlFor="business" className="sr-only">
-          What&rsquo;s your business? (optional)
+          {t("businessPlaceholder")}
         </label>
         <input
           ref={businessRef}
@@ -85,7 +91,7 @@ export default function WaitlistForm() {
           name="business"
           type="text"
           autoComplete="organization"
-          placeholder="What's your business? (optional)"
+          placeholder={t("businessPlaceholder")}
           disabled={loading}
           className="w-full px-5 py-4 rounded-md bg-cream text-charcoal placeholder:text-navy/50 font-sans text-lg focus:outline-none focus:ring-2 focus:ring-terracotta disabled:opacity-60"
         />
@@ -104,7 +110,7 @@ export default function WaitlistForm() {
             }`}
             aria-pressed={audience === "business"}
           >
-            I&rsquo;m a business owner
+            {t("audienceBusiness")}
           </button>
           <button
             type="button"
@@ -116,7 +122,7 @@ export default function WaitlistForm() {
             }`}
             aria-pressed={audience === "advisor"}
           >
-            I&rsquo;m a CPA or advisor
+            {t("audienceAdvisor")}
           </button>
         </div>
       </fieldset>
@@ -131,18 +137,15 @@ export default function WaitlistForm() {
           {loading ? (
             <span className="flex items-center justify-center gap-3">
               <Spinner />
-              Submitting…
+              {t("submitting")}
             </span>
           ) : (
-            "Join waitlist"
+            t("submit")
           )}
         </button>
 
         {status === "error" && errorMsg && (
-          <p
-            role="alert"
-            className="mt-3 text-sm text-cream/80 text-center"
-          >
+          <p role="alert" className="mt-3 text-sm text-cream/80 text-center">
             {errorMsg}
           </p>
         )}
