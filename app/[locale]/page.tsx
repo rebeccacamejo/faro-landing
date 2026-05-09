@@ -1,10 +1,12 @@
 import { useTranslations } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import Image from "next/image";
+import NextLink from "next/link";
 import Navbar from "../components/Navbar";
 import LivePrompts from "../components/LivePrompts";
 import FadeUp from "../components/FadeUp";
 import WaitlistBand from "../components/WaitlistBand";
+import { getAllPosts } from "@/lib/blog";
 
 function LighthouseBeam() {
   return (
@@ -41,6 +43,7 @@ export default function Home({
   const tPrompts = useTranslations("prompts");
   const promptCards = (tPrompts.raw("cards") as Array<{ agent: string; query: string }>);
   const referralRef = typeof searchParams?.ref === "string" ? searchParams.ref : undefined;
+  const latestPosts = getAllPosts(locale).slice(0, 2);
 
   return (
     <>
@@ -167,6 +170,22 @@ export default function Home({
                 </div>
               ))}
             </div>
+            <FadeUp delay={0.4}>
+              <p className="mt-14 font-sans text-base text-charcoal/60">
+                {locale === "es"
+                  ? "¿Tienes preguntas sobre precios, plazos o cómo funciona exactamente? "
+                  : "Questions about pricing, timelines, or exactly how this works? "}
+                <NextLink
+                  href={`/${locale}/faq`}
+                  className="text-terracotta hover:underline transition-colors no-underline"
+                >
+                  {locale === "es"
+                    ? "Lee las preguntas frecuentes sobre Faro"
+                    : "Read our FAQ — everything answered in plain language"}
+                </NextLink>
+                .
+              </p>
+            </FadeUp>
           </div>
         </section>
 
@@ -253,6 +272,55 @@ export default function Home({
           />
         </section>
       </main>
+
+      {/* ── FROM THE BLOG ────────────────────────────────────────────── */}
+      {latestPosts.length > 0 && (
+        <section aria-labelledby="blog-preview-heading" className="bg-cream py-20">
+          <div className="max-w-[1100px] mx-auto px-6">
+            <FadeUp>
+              <div className="flex items-baseline justify-between mb-10">
+                <h2 id="blog-preview-heading" className="font-serif text-[28px] md:text-[32px] text-navy">
+                  {locale === "es" ? "Del blog." : "From the blog."}
+                </h2>
+                <NextLink
+                  href={`/${locale}/blog`}
+                  className="font-sans text-sm text-charcoal/60 hover:text-navy no-underline hover:underline transition-colors"
+                >
+                  {locale === "es" ? "Ver todos los artículos →" : "All posts →"}
+                </NextLink>
+              </div>
+            </FadeUp>
+            <div className="grid md:grid-cols-2 gap-8">
+              {latestPosts.map((post) => (
+                <FadeUp key={post.slug}>
+                  <article className="border-t border-brass/20 pt-6">
+                    <p className="font-sans text-[11px] uppercase tracking-widest text-charcoal/40 mb-3">
+                      {post.category.replace(/-/g, " ")}
+                    </p>
+                    <h3 className="font-serif text-xl text-navy mb-3 leading-snug">
+                      <NextLink
+                        href={`/${locale}/blog/${post.slug}`}
+                        className="no-underline hover:text-terracotta transition-colors"
+                      >
+                        {post.title}
+                      </NextLink>
+                    </h3>
+                    <p className="font-sans text-sm text-charcoal/70 leading-relaxed mb-4 line-clamp-3">
+                      {post.excerpt}
+                    </p>
+                    <NextLink
+                      href={`/${locale}/blog/${post.slug}`}
+                      className="font-sans text-sm text-terracotta no-underline hover:underline transition-colors"
+                    >
+                      {locale === "es" ? "Leer artículo →" : "Read post →"}
+                    </NextLink>
+                  </article>
+                </FadeUp>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* ── FOOTER ───────────────────────────────────────────────────── */}
       <footer className="bg-cream-deep" role="contentinfo">

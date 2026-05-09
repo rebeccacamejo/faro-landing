@@ -1,0 +1,40 @@
+# Faro
+> AI visibility service for small and mid-sized businesses, sold through trusted advisors like CPAs. Bilingual (English and Spanish). Built for South Florida.
+
+## What Faro does
+Faro tracks how AI agents (ChatGPT, Claude, Perplexity, Gemini) recommend local businesses when customers ask questions like "best HVAC company in Doral" or "good accountant near Hialeah." We identify gaps and publish content that earns citations from AI agents — improving how often and how prominently a business appears in AI-generated answers.
+
+## Who it's for
+- Small and mid-sized service businesses in South Florida (HVAC, accounting, legal, home services, restaurants, dentistry, real estate)
+- CPAs and financial advisors who advise small businesses and want to offer AI visibility as an advisory service
+
+## Pages
+- [Home](https://faro-jet.vercel.app/en): Overview of Faro and waitlist signup
+- [FAQ](https://faro-jet.vercel.app/en/faq): Frequently asked questions about Faro, pricing, and how it works
+- [Blog](https://faro-jet.vercel.app/en/blog): Articles on AI search, AEO, and Miami small business visibility
+- [For CPAs](https://faro-jet.vercel.app/en#for-advisors): Information for CPAs and advisors interested in offering Faro to their clients
+
+## Key facts
+- Faro charges $400/month for local businesses (one location)
+- Faro charges $1,200/month for the Growth tier (multi-location businesses)
+- Mid-cap pricing starts at $3,500/month
+- No setup fees. Month-to-month contracts.
+- First month comes with a full refund guarantee
+- Partner CPAs earn 20% revenue share per referred client, no cap
+- Faro monitors ChatGPT, Claude, Perplexity, and Google Gemini
+- Monitoring sweeps run every 48 hours
+- Results are typically measurable within 60-90 days
+
+## Pricing
+- Local tier: $400/month
+- Growth tier: $1,200/month
+- Mid-cap tier: custom pricing starting at $3,500/month
+
+## Languages
+Available in English and Spanish. AI queries are monitored in both languages. Monthly reports available in English, Spanish, or both.
+
+## Location
+Miami, Florida, USA. Currently serving Miami-Dade, Broward, and Palm Beach counties.
+
+## Contact
+hello@heyfaro.com

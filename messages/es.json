@@ -288,6 +288,28 @@
             "a": "Sí, en cualquier momento. Escríbenos a hello@heyfaro.com con tu solicitud de eliminación y borraremos tu cuenta y todos los datos asociados en un plazo de 30 días. No conservamos copias de seguridad de datos de clientes después de que cierra el período de eliminación."
           }
         ]
+      },
+      {
+        "title": "Términos clave",
+        "slug": "glosario",
+        "items": [
+          {
+            "q": "¿Qué es la optimización para motores de respuesta (AEO)?",
+            "a": "La optimización para motores de respuesta, conocida en inglés como AEO (answer engine optimization), es la práctica de estructurar la presencia digital de un negocio para que los sistemas de IA como ChatGPT, Claude y Perplexity lo citen cuando responden preguntas relevantes de clientes. El AEO es diferente del SEO tradicional: en lugar de optimizar para aparecer en una lista de enlaces, se optimiza para ser la respuesta nombrada en una respuesta conversacional. Faro ofrece AEO como servicio gestionado."
+          },
+          {
+            "q": "¿Qué es la optimización para motores generativos (GEO)?",
+            "a": "La optimización para motores generativos, conocida en inglés como GEO (generative engine optimization), es un sinónimo de AEO, usado con más frecuencia en contextos académicos y técnicos. Ambos términos se refieren a la misma práctica: mejorar con qué frecuencia y prominencia aparece un negocio en los resultados de los modelos de lenguaje. Faro usa AEO como término principal porque es más descriptivo para los dueños de negocios."
+          },
+          {
+            "q": "¿Qué significa \"visibilidad en IA\"?",
+            "a": "La visibilidad en IA es con qué frecuencia y precisión aparece un negocio cuando los agentes de IA responden preguntas relevantes de clientes. Un negocio con alta visibilidad en IA es citado por nombre en respuestas a consultas como \"mejor empresa de A/C en Miami\" o \"buen contador cerca de Hialeah.\" Un negocio con baja visibilidad en IA está ausente de esas respuestas — invisible para los clientes que buscan con IA en lugar de Google."
+          },
+          {
+            "q": "¿Qué es una cita en el contexto de la búsqueda con IA?",
+            "a": "En la búsqueda con IA, una cita ocurre cuando un agente de IA nombra tu negocio como recomendación en respuesta a una pregunta de un cliente. A diferencia de un enlace de Google, una cita de IA pone el nombre de tu negocio directamente en la respuesta — frecuentemente con una breve explicación de por qué. Las citas de agentes de IA generan acción del cliente de la misma manera que una recomendación personal: el negocio es nombrado, no solo listado."
+          }
+        ]
       }
     ]
   }

@@ -26,6 +26,104 @@ type Props = {
 
 const BASE_URL = "https://faro-jet.vercel.app";
 
+// ── Global structured data ────────────────────────────────────────────────────
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": `${BASE_URL}/#organization`,
+  name: "Faro",
+  url: BASE_URL,
+  logo: {
+    "@type": "ImageObject",
+    url: `${BASE_URL}/icon-512.png`,
+  },
+  description:
+    "AI visibility service for small and mid-sized businesses, sold through trusted advisors. Bilingual. Based in Miami.",
+  areaServed: [
+    { "@type": "State", "name": "Florida" },
+    { "@type": "Country", "name": "United States" },
+  ],
+  knowsLanguage: ["en", "es"],
+  foundingLocation: { "@type": "Place", name: "Miami, FL" },
+  founder: [
+    { "@type": "Person", name: "Rebecca Camejo" },
+    // TODO: add co-founder name
+  ],
+  // TODO: add LinkedIn company page URL once live
+  sameAs: [],
+  contactPoint: {
+    "@type": "ContactPoint",
+    email: "hello@heyfaro.com",
+    contactType: "customer service",
+  },
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": `${BASE_URL}/#service`,
+  name: "Faro AI Visibility Service",
+  serviceType: "Answer Engine Optimization",
+  description:
+    "Monthly AI visibility monitoring and optimization for local and mid-sized businesses. Faro tracks ChatGPT, Claude, Perplexity, and Gemini recommendations and publishes content that earns citations from AI agents.",
+  provider: { "@id": `${BASE_URL}/#organization` },
+  areaServed: [
+    { "@type": "State", name: "Florida" },
+    { "@type": "Country", name: "United States" },
+  ],
+  audience: {
+    "@type": "BusinessAudience",
+    audienceType:
+      "Small and mid-sized business owners and their trusted advisors (CPAs, bookkeepers, financial advisors)",
+  },
+  offers: [
+    {
+      "@type": "Offer",
+      name: "Local",
+      description:
+        "AI visibility monitoring and optimization for single-location local businesses. Includes monthly two-page report, bilingual coverage, and co-branded CPA reporting.",
+      price: "400",
+      priceCurrency: "USD",
+      priceSpecification: {
+        "@type": "UnitPriceSpecification",
+        price: "400",
+        priceCurrency: "USD",
+        unitCode: "MON",
+        unitText: "month",
+      },
+    },
+    {
+      "@type": "Offer",
+      name: "Growth",
+      description:
+        "AI visibility monitoring and optimization for multi-location businesses. Includes broader keyword monitoring, white-label report options, and priority support.",
+      price: "1200",
+      priceCurrency: "USD",
+      priceSpecification: {
+        "@type": "UnitPriceSpecification",
+        price: "1200",
+        priceCurrency: "USD",
+        unitCode: "MON",
+        unitText: "month",
+      },
+    },
+    {
+      "@type": "Offer",
+      name: "Mid-cap",
+      description:
+        "Custom AI visibility solution for mid-cap companies with complex multi-market or multi-brand needs. Pricing starts at $3,500/month.",
+      priceSpecification: {
+        "@type": "PriceSpecification",
+        description: "Custom pricing starting at $3,500/month",
+        priceCurrency: "USD",
+      },
+    },
+  ],
+};
+
+// ── Metadata ──────────────────────────────────────────────────────────────────
+
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
@@ -90,6 +188,8 @@ export async function generateMetadata({
   };
 }
 
+// ── Layout ────────────────────────────────────────────────────────────────────
+
 export default async function LocaleLayout({ children, params: { locale } }: Props) {
   if (!routing.locales.includes(locale as (typeof routing.locales)[number])) {
     notFound();
@@ -100,6 +200,16 @@ export default async function LocaleLayout({ children, params: { locale } }: Pro
 
   return (
     <html lang={locale} className={`${inter.variable} ${fraunces.variable}`}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+        />
+      </head>
       <body>
         <NextIntlClientProvider messages={messages}>
           <ScrollRestorer />

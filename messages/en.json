@@ -288,6 +288,28 @@
             "a": "Yes, at any time. Email hello@heyfaro.com with a deletion request and we'll delete your account and all associated data within 30 days. We retain no backups of client data after the deletion window closes."
           }
         ]
+      },
+      {
+        "title": "Key terms",
+        "slug": "glossary",
+        "items": [
+          {
+            "q": "What is answer engine optimization (AEO)?",
+            "a": "Answer engine optimization (AEO) is the practice of structuring your business's online presence so that AI systems like ChatGPT, Claude, and Perplexity cite your business when answering relevant customer questions. AEO is distinct from traditional SEO: instead of optimizing for a ranked list of links, you're optimizing to be the named answer in a conversational response. Faro provides AEO as a managed service."
+          },
+          {
+            "q": "What is generative engine optimization (GEO)?",
+            "a": "Generative engine optimization (GEO) is a synonym for AEO, used more commonly in academic and technical contexts. Both terms refer to the same practice: improving how often and how prominently a business or entity appears in the outputs of large language models. Faro uses AEO as its primary term because it's more descriptive for business owners."
+          },
+          {
+            "q": "What does \"AI visibility\" mean?",
+            "a": "AI visibility is how often and how accurately a business appears when AI agents respond to relevant customer questions. A business with high AI visibility is cited by name in responses to queries like \"best HVAC company in Miami\" or \"good accountant near Hialeah.\" A business with low AI visibility is absent from those responses — invisible to customers who search with AI instead of Google."
+          },
+          {
+            "q": "What is a citation in the context of AI search?",
+            "a": "In AI search, a citation is when an AI agent names your business as a recommendation in response to a customer question. Unlike a Google link, an AI citation puts your business name directly in the answer — often with a brief explanation of why. Citations from AI agents drive customer action in the same way that a personal recommendation does: the business is named, not just listed."
+          }
+        ]
       }
     ]
   }

@@ -60,14 +60,21 @@ export async function generateMetadata({
       images: [
         post.coverImage
           ? { url: post.coverImage, width: 1200, height: 630 }
-          : { url: "/api/og", width: 1200, height: 630 },
+          : {
+              url: `/api/og/blog?title=${encodeURIComponent(post.title)}&subtitle=${encodeURIComponent(post.excerpt.slice(0, 110))}`,
+              width: 1200,
+              height: 630,
+            },
       ],
     },
     twitter: {
       card: "summary_large_image",
       title: post.title,
       description: post.excerpt,
-      images: [post.coverImage || "/api/og"],
+      images: [
+        post.coverImage ||
+          `/api/og/blog?title=${encodeURIComponent(post.title)}&subtitle=${encodeURIComponent(post.excerpt.slice(0, 110))}`,
+      ],
     },
   };
 }
@@ -296,12 +303,22 @@ export default function PostPage({
                 ? "Faro rastrea cómo la IA recomienda negocios en Miami y te posiciona donde más importa."
                 : "Faro tracks how AI recommends Miami businesses and gets you cited where it matters."}
             </p>
-            <a
-              href={`/${locale}#waitlist`}
-              className="inline-block bg-terracotta hover:bg-terracotta/90 text-cream font-sans font-medium text-base px-6 py-3 rounded-md transition-colors no-underline hover:no-underline focus:outline-none focus:ring-2 focus:ring-terracotta focus:ring-offset-2"
-            >
-              {locale === "es" ? "Únete a la lista" : "Join the waitlist"}
-            </a>
+            <div className="flex flex-col sm:flex-row items-start gap-4">
+              <a
+                href={`/${locale}#waitlist`}
+                className="inline-block bg-terracotta hover:bg-terracotta/90 text-cream font-sans font-medium text-base px-6 py-3 rounded-md transition-colors no-underline hover:no-underline focus:outline-none focus:ring-2 focus:ring-terracotta focus:ring-offset-2"
+              >
+                {locale === "es" ? "Únete a la lista" : "Join the waitlist"}
+              </a>
+              <Link
+                href={`/${locale}/faq`}
+                className="inline-block font-sans text-base text-charcoal/60 hover:text-navy no-underline hover:underline transition-colors py-3"
+              >
+                {locale === "es"
+                  ? "Ver preguntas frecuentes sobre Faro →"
+                  : "Read our FAQ — pricing, how it works, who it's for →"}
+              </Link>
+            </div>
           </div>
         </article>
 
