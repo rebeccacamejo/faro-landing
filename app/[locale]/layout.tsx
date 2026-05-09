@@ -36,10 +36,12 @@ export async function generateMetadata({
     description: t("description"),
     icons: {
       icon: [
-        { url: "/favicon.svg", type: "image/svg+xml", sizes: "any" },
-        { url: "/favicon.ico", sizes: "48x48" },
+        { url: "/icon.svg", type: "image/svg+xml" },
+        { url: "/favicon.ico", sizes: "any" },
       ],
+      apple: "/apple-icon.png",
     },
+    manifest: "/manifest.json",
   };
 }
 
