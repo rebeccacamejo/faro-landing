@@ -5,6 +5,7 @@
   },
   "nav": {
     "howItWorks": "Cómo funciona",
+    "faq": "FAQ",
     "forAdvisors": "Para asesores",
     "blog": "Blog",
     "signIn": "Iniciar sesión",
@@ -24,7 +25,7 @@
   },
   "problem": {
     "heading": "Tus clientes le están preguntando a la IA a quién contratar. Tú quieres ser la respuesta.",
-    "para1": "Cerca del diez por ciento de las búsquedas en EE. UU. ya ocurren en plataformas de IA en lugar de Google. Ese número crece mes a mes. Tus clientes ya le preguntan a ChatGPT: “¿Quién es un buen contador cerca de mí?” o “¿Cuál es la mejor empresa de HVAC en Miami?” — antes de abrir siquiera el navegador.",
+    "para1": "Cerca del diez por ciento de las búsquedas en EE. UU. ya ocurren en plataformas de IA en lugar de Google. Ese número crece mes a mes. Tus clientes ya le preguntan a ChatGPT: \"¿Quién es un buen contador cerca de mí?\" o \"¿Cuál es la mejor empresa de HVAC en Miami?\" — antes de abrir siquiera el navegador.",
     "para2": "La IA no devuelve diez enlaces azules. Lee sus fuentes, forma una opinión y nombra uno o dos negocios. Si no apareces en esa respuesta, no existes — sin importar cuántas reseñas de Google tengas.",
     "para3": "La mayoría de los negocios locales y medianos no saben si están apareciendo en las recomendaciones de IA. No hay reportes, ni paneles, ni alertas. Faro cambia eso."
   },
@@ -104,5 +105,190 @@
     "email": "hello@heyfaro.com",
     "languageToggle": "English / Español",
     "languageToggleLabel": "Cambiar al inglés"
+  },
+  "faq": {
+    "metadata": {
+      "title": "Preguntas frecuentes — Cómo funciona Faro, qué cuesta, para quién es | Faro",
+      "description": "Respuestas directas sobre Faro: cómo funciona la visibilidad en IA, cuánto cuesta el servicio, para quién está hecho y por qué importa para los negocios en Miami."
+    },
+    "hero": {
+      "heading": "Preguntas, respondidas.",
+      "subhead": "Todo lo que podrías preguntar antes de inscribirte — y algunas cosas que deberías preguntar pero probablemente no se te ocurrirían."
+    },
+    "ctaBand": {
+      "prefix": "¿Todavía tienes preguntas? Escríbenos a ",
+      "email": "hello@heyfaro.com",
+      "mid": " o ",
+      "waitlist": "únete a la lista de espera",
+      "suffix": " y coordinamos una llamada de 15 minutos."
+    },
+    "sections": [
+      {
+        "title": "Sobre Faro",
+        "slug": "sobre-faro",
+        "items": [
+          {
+            "q": "¿Qué es Faro?",
+            "a": "Faro es un servicio de visibilidad en inteligencia artificial para negocios pequeños y medianos. Monitoreamos si agentes como ChatGPT, Claude, Perplexity y Gemini están recomendando tu negocio cuando clientes potenciales hacen preguntas relevantes — y lo corregimos cuando no lo hacen. Piénsalo como el SEO de siempre, pero diseñado para cuando la IA da la respuesta directamente en lugar de mostrar una lista de enlaces."
+          },
+          {
+            "q": "¿Quiénes crearon Faro y por qué?",
+            "a": "Faro lo creó un equipo que pasó años ayudando a negocios en Miami a aparecer en Google, y luego vio cómo ese trabajo dejó de dar resultados cuando la búsqueda con IA empezó a tomar protagonismo. Lo construimos porque los negocios que conocemos de cerca — el contador en Hialeah, la empresa de A/C en Doral, el bufete de abogados en Brickell — no sabían que eran invisibles para la IA y nadie los estaba orientando. Queríamos cambiar eso antes de que perdieran una generación de clientes frente a competidores que actuaron más rápido."
+          },
+          {
+            "q": "¿Dónde está Faro?",
+            "a": "Faro tiene su base en Miami, Florida. Empezamos aquí de manera deliberada: Miami tiene una de las concentraciones más altas de pequeños negocios en los Estados Unidos, una clientela genuinamente bilingüe y casi ninguna herramienta de visibilidad en IA diseñada con esa realidad en mente. Miami es el laboratorio de todo lo que construimos."
+          },
+          {
+            "q": "¿Faro está disponible fuera de Miami?",
+            "a": "Por ahora estamos enfocados en el sur de la Florida. Estamos incorporando los primeros clientes piloto en Miami-Dade, Broward y Palm Beach. Nos expandiremos a otros mercados cuando el piloto concluya — si estás fuera del sur de Florida y te interesa el servicio, anótate en la lista de espera y te avisamos en cuanto lleguemos a tu zona."
+          },
+          {
+            "q": "¿Faro es un software o un servicio?",
+            "a": "Faro es un servicio completamente gestionado. No instalas nada, no entras a ningún panel de control y no tienes que encargarte del trabajo de optimización. Nosotros manejamos el monitoreo de IA, la creación de contenido, la construcción de citas y los reportes. Tú recibes un reporte mensual de dos páginas — y nada más que aprender."
+          }
+        ]
+      },
+      {
+        "title": "Cómo funciona",
+        "slug": "como-funciona",
+        "items": [
+          {
+            "q": "¿Cómo rastrea Faro las recomendaciones de IA?",
+            "a": "Ejecutamos cientos de consultas a la semana en ChatGPT, Claude, Perplexity y Gemini — el tipo de preguntas que realmente hacen tus clientes, adaptadas a la categoría y ubicación de tu negocio. Registramos qué negocios aparecen en las respuestas, qué fuentes usa la IA para justificar sus recomendaciones y con qué frecuencia aparecen tus competidores en comparación contigo."
+          },
+          {
+            "q": "¿Qué agentes de IA monitorea Faro?",
+            "a": "Actualmente monitoreamos ChatGPT (GPT-4o), Perplexity, Google Gemini y Claude. Estos cuatro concentran la gran mayoría de las búsquedas asistidas por IA que ocurren hoy. Incorporamos nuevos agentes al sistema de monitoreo a medida que alcanzan una cuota de mercado relevante — sin que tengas que solicitarlo."
+          },
+          {
+            "q": "¿Con qué frecuencia verifica Faro las menciones?",
+            "a": "Hacemos barridos de monitoreo cada 48 horas. Las recomendaciones de IA cambian a medida que los modelos actualizan su conocimiento y se publica contenido nuevo, así que el monitoreo frecuente importa. Si un competidor publica algo que te desplace de las respuestas esta semana, te enterarás antes de que te cueste un cliente."
+          },
+          {
+            "q": "¿Qué contiene el reporte mensual?",
+            "a": "Tu reporte mensual muestra tu puntaje de visibilidad en IA (con qué frecuencia apareces cuando los clientes hacen preguntas relevantes), qué agentes de IA te citan frente a tus principales competidores, qué fuentes usa la IA para justificar sus picks, y qué hicimos el mes pasado para mejorar tu posición. Son dos páginas — pensadas para leer en cinco minutos, ya sea tú o tu contador, no un mazo de diapositivas."
+          },
+          {
+            "q": "¿Necesito instalar algo en mi sitio web?",
+            "a": "Nada. Faro opera completamente desde nuestro lado. No necesitamos acceso a tu sitio, fragmentos de código ni ninguna configuración técnica de tu parte. A veces pedimos información básica sobre tu negocio durante la incorporación para que nuestro contenido sea más preciso — pero eso es una llamada de 15 minutos, no una integración técnica."
+          },
+          {
+            "q": "¿Cuánto tiempo toma ver resultados?",
+            "a": "La mayoría de los clientes ven una mejora medible en su puntaje de visibilidad en IA dentro de 60 a 90 días. El primer mes es principalmente medición inicial y configuración. Los modelos de IA tardan en indexar contenido nuevo después de publicarlo, así que hay un desfase entre el trabajo que hacemos y cuando aparece en tus puntajes. Somos transparentes sobre ese calendario desde el día uno."
+          }
+        ]
+      },
+      {
+        "title": "Para dueños de negocio",
+        "slug": "para-duenos",
+        "items": [
+          {
+            "q": "¿Necesito saber de tecnología para usar Faro?",
+            "a": "Para nada. Recibes un PDF mensual. Esa es toda la interfaz que hay. No esperamos que entres a paneles de control, que entiendas cambios de algoritmos ni que gestiones nada. Tú manejas tu negocio — nosotros nos encargamos de la parte de la IA."
+          },
+          {
+            "q": "¿Y si no tengo contador?",
+            "a": "Faro funciona igual sin contador. La mayoría de nuestros clientes trabajan con un contador o asesor financiero, pero no es requisito. Si quieres que te conectemos con un contador en Miami-Dade que entiende la visibilidad en IA y lo que significa para la estrategia de tu negocio, podemos hacerlo — trabajamos de cerca con varios."
+          },
+          {
+            "q": "¿De verdad mis clientes me van a encontrar por ChatGPT?",
+            "a": "Sí, y ya está pasando más rápido de lo que la mayoría de los dueños de negocios se imagina. Negocios de servicios — A/C, contabilidad, legal, servicios del hogar, odontología — ya están viendo clientes nuevos que dicen haberlos encontrado preguntándole a una IA. La pregunta no es si va a afectar tu negocio. Ya está pasando. La única pregunta es si serás tú el que aparezca o tu competidor."
+          },
+          {
+            "q": "¿Qué pasa si ya aparezco en los resultados de IA?",
+            "a": "Bien — eso significa que tienes un punto de partida. Aparecer una vez en una respuesta no significa que estés ganando. Faro te muestra con qué frecuencia apareces, en cuántas consultas relevantes, con qué consistencia, y qué competidores aparecen en las mismas respuestas. Después te ayudamos a aparecer con más regularidad, en más contextos y en posiciones de mayor confianza."
+          },
+          {
+            "q": "¿Puede Faro ayudar también con mis posiciones en Google?",
+            "a": "El trabajo de contenido y citas que hacemos para la visibilidad en IA tiende a mejorar los rankings de Google como efecto secundario — tanto los modelos de IA como Google confían en el mismo tipo de fuentes autorizadas y bien documentadas. No somos una agencia de SEO y no prometemos posiciones específicas en Google, pero nuestro trabajo está estructuralmente alineado con la búsqueda tradicional también."
+          }
+        ]
+      },
+      {
+        "title": "Para CPAs y asesores",
+        "slug": "para-asesores",
+        "items": [
+          {
+            "q": "¿Cómo funciona el programa de socios?",
+            "a": "Tú refieres un cliente a Faro, nosotros nos encargamos de todo — incorporación, reporte mensual, trabajo de optimización — y tú recibes una participación en los ingresos mientras ese cliente siga activo. También recibes versiones co-brandadas de sus reportes, para que la visibilidad en IA se convierta en una parte natural de tu relación de asesoría sin agregar carga a tu equipo."
+          },
+          {
+            "q": "¿Cuánto es la participación en los ingresos?",
+            "a": "Las firmas asociadas ganan el 20% de los ingresos mensuales por cada cliente referido, pagado mes a mes, sin tope. En un plan local de $400/mes, eso son $80/mes por cliente. En un plan Growth de $1,200/mes, son $240/mes por cliente. La participación continúa mientras el cliente permanezca con Faro — no tiene fecha de vencimiento."
+          },
+          {
+            "q": "¿Puedo usar los reportes con la marca de mi firma?",
+            "a": "Sí. Los clientes del nivel Growth en adelante reciben reportes que pueden llevar el co-branding de tu firma. La marca blanca completa — con tu identidad visual y sin mención de Faro — está disponible para firmas que gestionen cinco o más clientes de Faro. Contáctanos para configurarlo."
+          },
+          {
+            "q": "¿Para qué tipo de clientes es mejor Faro?",
+            "a": "Faro es ideal para negocios de servicios que dependen de la reputación local: contadores, bufetes de abogados, empresas de A/C y plomería, dentistas, asesores financieros, agentes de bienes raíces y servicios del hogar. Si tus clientes obtienen la mayoría de sus nuevos clientes por recomendación o boca a boca, son exactamente el tipo de negocio que la IA ya intenta recomendar — y exactamente el tipo que podemos ayudar."
+          },
+          {
+            "q": "¿Cuánto tiempo le toma esto a mi equipo?",
+            "a": "La referencia toma una conversación. Después de eso, tu equipo dedicará unos diez minutos por cliente al mes revisando el reporte co-brandado antes de que salga. No necesitamos que tu equipo gestione ninguna herramienta, entre a ningún sistema ni aprenda ningún flujo de trabajo nuevo."
+          }
+        ]
+      },
+      {
+        "title": "Precios",
+        "slug": "precios",
+        "items": [
+          {
+            "q": "¿Cuánto cuesta Faro?",
+            "a": "Los planes comienzan en $400/mes para negocios locales — una ubicación, un mercado, reportes mensuales completos. Nuestro nivel Growth es de $1,200/mes e incluye negocios con múltiples ubicaciones, monitoreo de palabras clave más amplio y opciones de reportes con marca blanca. Las empresas medianas con necesidades más complejas reciben precio personalizado. Sin tarifas de configuración. Mes a mes."
+          },
+          {
+            "q": "¿Hay prueba gratuita?",
+            "a": "No hacemos prueba gratuita — nuestro trabajo requiere tiempo real de configuración y esfuerzo continuo del equipo, y dos semanas no son suficientes para evaluar el servicio con datos reales. En cambio, el primer mes incluye garantía de reembolso completo: si tu reporte inicial de visibilidad en IA no revela al menos una brecha u oportunidad concreta, te devolvemos el primer mes sin preguntas."
+          },
+          {
+            "q": "¿Hay cargos de configuración?",
+            "a": "No. La tarifa del primer mes lo cubre todo — la llamada de incorporación, la configuración del monitoreo inicial, tu primer reporte y la primera ronda de trabajo de optimización. Nada adicional al comienzo."
+          },
+          {
+            "q": "¿Cuánto dura el contrato?",
+            "a": "Mes a mes. Puedes cancelar en cualquier momento con 30 días de aviso. No encerramos a nadie en contratos anuales para un servicio que se supone debe ganarse tu confianza cada mes. Si no estamos entregando resultados, deberías poder irte."
+          }
+        ]
+      },
+      {
+        "title": "Soporte bilingüe",
+        "slug": "bilingual",
+        "items": [
+          {
+            "q": "¿Faro funciona para negocios que operan en español?",
+            "a": "Sí, y es una de las cosas que hacemos mejor que cualquier otro. Faro fue creado en Miami específicamente porque este mercado es bilingüe — no como una función adicional, sino como un requisito central del diseño. Monitoreamos consultas de IA tanto en inglés como en español y creamos contenido en los dos idiomas. Tu visibilidad en IA cubre a ambas comunidades."
+          },
+          {
+            "q": "¿Los reportes están disponibles en español?",
+            "a": "Sí. Puedes recibir tu reporte mensual en español, inglés o en ambos idiomas. La versión en español no es una traducción de la versión en inglés — está redactada para un lector hispanohablante, con el contexto apropiado para quien quizá lo comparta con un socio de negocio familiar o con un asesor que trabaja principalmente en español."
+          },
+          {
+            "q": "¿Faro rastrea búsquedas de IA en español?",
+            "a": "Sí. Una parte significativa de tus clientes potenciales en Miami le hacen preguntas a la IA en español — y las respuestas que obtienen son distintas a las respuestas en inglés. Ejecutamos una porción importante de nuestras consultas de monitoreo en español, para que tu reporte refleje todo tu mercado local, no solo la parte que habla inglés."
+          }
+        ]
+      },
+      {
+        "title": "Privacidad y datos",
+        "slug": "privacidad",
+        "items": [
+          {
+            "q": "¿Qué datos recopila Faro sobre mi negocio?",
+            "a": "Recopilamos información básica del negocio: tu nombre, el nombre del negocio, la ubicación, la categoría, los datos de contacto y cualquier detalle que compartas durante la incorporación para que nuestro contenido sea más preciso. No accedemos a tus registros financieros, datos de clientes, sistemas internos ni nada fuera de lo que tú nos das explícitamente. Solo recopilamos lo que necesitamos para hacer el trabajo."
+          },
+          {
+            "q": "¿Comparten mis datos con alguien?",
+            "a": "No. No vendemos datos de clientes, no los compartimos con terceros ni los usamos para entrenar modelos de IA. La información que nos das se usa únicamente para prestarte el servicio de Faro. Si refieres a un cliente, solo sabrán que fuiste tú quien los refirió — eso es todo. No compartimos los detalles de tu cuenta o negocio con nadie, ni siquiera con el cliente que referiste."
+          },
+          {
+            "q": "¿Puedo eliminar mi cuenta?",
+            "a": "Sí, en cualquier momento. Escríbenos a hello@heyfaro.com con tu solicitud de eliminación y borraremos tu cuenta y todos los datos asociados en un plazo de 30 días. No conservamos copias de seguridad de datos de clientes después de que cierra el período de eliminación."
+          }
+        ]
+      }
+    ]
   }
 }

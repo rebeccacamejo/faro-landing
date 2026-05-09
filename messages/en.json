@@ -5,6 +5,7 @@
   },
   "nav": {
     "howItWorks": "How it works",
+    "faq": "FAQ",
     "forAdvisors": "For advisors",
     "blog": "Blog",
     "signIn": "Sign in",
@@ -24,9 +25,9 @@
   },
   "problem": {
     "heading": "Your customers are asking AI who to hire. You want to be the answer.",
-    "para1": "About one in ten searches in the US now happen on AI platforms instead of Google. That number is growing every month. Your customers are already asking ChatGPT, “Who’s a good accountant near me?” or “What’s the best HVAC company in Miami?” before they ever open a browser tab.",
-    "para2": "AI doesn’t return ten blue links. It reads its sources, forms an opinion, and names one or two businesses. If you’re not in that answer, you don’t exist — no matter how good your Google reviews are.",
-    "para3": "Most local and mid-sized businesses have no idea whether they’re showing up in AI recommendations. There are no reports, no dashboards, no alerts. Faro changes that."
+    "para1": "About one in ten searches in the US now happen on AI platforms instead of Google. That number is growing every month. Your customers are already asking ChatGPT, \"Who's a good accountant near me?\" or \"What's the best HVAC company in Miami?\" before they ever open a browser tab.",
+    "para2": "AI doesn't return ten blue links. It reads its sources, forms an opinion, and names one or two businesses. If you're not in that answer, you don't exist — no matter how good your Google reviews are.",
+    "para3": "Most local and mid-sized businesses have no idea whether they're showing up in AI recommendations. There are no reports, no dashboards, no alerts. Faro changes that."
   },
   "howItWorks": {
     "heading": "How Faro works.",
@@ -45,24 +46,24 @@
   },
   "forAdvisors": {
     "heading": "Are you a CPA or trusted advisor?",
-    "para1": "Faro is built to be offered through advisor relationships. Your clients trust you with their finances, their taxes, and increasingly their business strategy. AI visibility is the next frontier — and it’s one they’ll need help navigating.",
+    "para1": "Faro is built to be offered through advisor relationships. Your clients trust you with their finances, their taxes, and increasingly their business strategy. AI visibility is the next frontier — and it's one they'll need help navigating.",
     "para2": "Partner firms get co-branded monthly reports, a revenue share on every client they refer, and the option to lock in exclusive territory coverage for their market. We handle everything — you stay the trusted advisor.",
     "cta": "Become a partner"
   },
   "waitlist": {
     "heading": "Join the waitlist.",
-    "subhead": "We’re onboarding our first ten Miami pilot clients. Be one of them.",
+    "subhead": "We're onboarding our first ten Miami pilot clients. Be one of them.",
     "emailPlaceholder": "you@yourbusiness.com",
-    "businessPlaceholder": "What’s your business? (optional)",
-    "audienceBusiness": "I’m a business owner",
-    "audienceAdvisor": "I’m a CPA or advisor",
+    "businessPlaceholder": "What's your business? (optional)",
+    "audienceBusiness": "I'm a business owner",
+    "audienceAdvisor": "I'm a CPA or advisor",
     "submit": "Join waitlist",
     "submitting": "Submitting…",
     "networkError": "Network error — please check your connection and try again.",
     "confirmation": {
-      "heading": "You’re on the list.",
-      "positionOf": "You’re #{position} of {total}.",
-      "pilotSlots": "We’re onboarding {slots} pilot clients.",
+      "heading": "You're on the list.",
+      "positionOf": "You're #{position} of {total}.",
+      "pilotSlots": "We're onboarding {slots} pilot clients.",
       "moveUpHeading": "Move up the waitlist.",
       "moveUpBody": "We pick our first ten pilot clients based on signup order — and how many other businesses you bring with you. Refer three businesses to jump to the front.",
       "yourLink": "Your referral link",
@@ -104,5 +105,190 @@
     "email": "hello@heyfaro.com",
     "languageToggle": "English / Español",
     "languageToggleLabel": "Switch to Spanish"
+  },
+  "faq": {
+    "metadata": {
+      "title": "FAQ — How Faro works, what it costs, who it's for | Faro",
+      "description": "Straight answers about Faro: how AI visibility works, what the service costs, who it's built for, and why it matters for Miami small businesses."
+    },
+    "hero": {
+      "heading": "Questions, answered.",
+      "subhead": "Everything you might ask before signing up — and a few things you should ask but probably wouldn't think to."
+    },
+    "ctaBand": {
+      "prefix": "Still have questions? Email ",
+      "email": "hello@heyfaro.com",
+      "mid": " or ",
+      "waitlist": "join the waitlist",
+      "suffix": " and we'll set up a 15-minute call."
+    },
+    "sections": [
+      {
+        "title": "About Faro",
+        "slug": "about-faro",
+        "items": [
+          {
+            "q": "What is Faro?",
+            "a": "Faro is an AI visibility service for small and mid-sized businesses. We track whether AI agents like ChatGPT, Claude, Perplexity, and Gemini are recommending your business when potential customers ask relevant questions — and then we fix it when they're not. Think of it as SEO, but built for the era when AI gives the answer instead of showing a list of links."
+          },
+          {
+            "q": "Who built Faro and why?",
+            "a": "Faro was built by a team that spent years helping Miami businesses get found online, then watched that playbook stop working as AI search took off. We built it because the businesses we cared about — accountants in Hialeah, HVAC companies in Doral, law firms in Coral Gables — had no idea they were invisible to AI, and no one was helping them fix it. We wanted to change that before they lost a generation of customers to competitors who moved faster."
+          },
+          {
+            "q": "Where is Faro based?",
+            "a": "Faro is based in Miami, Florida. We started here deliberately — Miami has one of the highest concentrations of small businesses in the US, a genuinely bilingual customer base, and almost no AI visibility tools built with that reality in mind. Miami is the test case for everything we build."
+          },
+          {
+            "q": "Is Faro available outside Miami?",
+            "a": "Right now, we're focused on South Florida. We're onboarding our first pilot clients in Miami-Dade, Broward, and Palm Beach counties. We'll expand to other markets after the pilot wraps — if you're outside South Florida and interested, join the waitlist and we'll contact you when we reach your area."
+          },
+          {
+            "q": "Is Faro a software product or a service?",
+            "a": "Faro is a done-for-you service. You don't install software, manage a dashboard, or touch the optimization work yourself. We handle AI monitoring, content creation, citation building, and reporting. You get a clean two-page monthly report — nothing else to learn or manage."
+          }
+        ]
+      },
+      {
+        "title": "How it works",
+        "slug": "how-it-works",
+        "items": [
+          {
+            "q": "How does Faro track AI recommendations?",
+            "a": "We run hundreds of queries every week across ChatGPT, Claude, Perplexity, and Gemini — the kinds of questions your actual customers ask, customized to your business category and location. We record which businesses appear in the answers, which sources AI is citing to justify those picks, and how often your competitors show up versus you."
+          },
+          {
+            "q": "Which AI agents does Faro monitor?",
+            "a": "We currently monitor ChatGPT (GPT-4o), Perplexity, Google Gemini, and Claude. These four cover the overwhelming majority of AI-assisted searches happening today. We add new agents to the rotation as they reach meaningful market share — you don't have to request it, it happens automatically."
+          },
+          {
+            "q": "How often does Faro check for mentions?",
+            "a": "We run monitoring sweeps every 48 hours. AI recommendations shift as models update their knowledge and as new content gets published, so frequent monitoring matters. A competitor could publish something that bumps you from the answers this week — you'll know about it before it costs you a client."
+          },
+          {
+            "q": "What does the monthly report contain?",
+            "a": "Your monthly report shows your AI visibility score (how often you appear when customers ask relevant questions), which AI agents are citing you vs. your top competitors, which sources AI uses to justify its recommendations, and what we did last month to improve your position. It's two pages — designed to be read in five minutes by you or your CPA, not a 40-slide deck."
+          },
+          {
+            "q": "Do I need to install anything on my website?",
+            "a": "Nothing. Faro works entirely from our side. We don't require website access, tracking scripts, or any technical setup on your end. We sometimes request basic information about your business during onboarding to make our content more accurate — but that's a 15-minute intake call, not a technical integration."
+          },
+          {
+            "q": "How long until I see results?",
+            "a": "Most clients see measurable improvement in their AI visibility score within 60 to 90 days. The first month is baseline measurement and setup. AI models take time to index new content after it's published, so there's a lag between our work and when it shows up in your scores. We're transparent about that timeline from day one."
+          }
+        ]
+      },
+      {
+        "title": "For business owners",
+        "slug": "for-business-owners",
+        "items": [
+          {
+            "q": "Do I need to be technical to use Faro?",
+            "a": "No. You get a monthly PDF. That's the entire user interface. We don't expect you to log into dashboards, understand algorithm changes, or manage anything. You run your business — we handle the AI side."
+          },
+          {
+            "q": "What if I don't have a CPA?",
+            "a": "Faro works fine without one. Most of our clients do have a CPA or financial advisor, but it's not a requirement. If you'd like an introduction to a CPA in Miami-Dade who understands AI visibility and what it means for business strategy, we can make that connection — we work closely with several firms."
+          },
+          {
+            "q": "Will my customers actually find me through ChatGPT?",
+            "a": "Yes, and it's happening faster than most business owners realize. Service businesses — HVAC, accounting, legal, home services, dentistry — are already seeing new clients who say they found them by asking an AI first. The question isn't whether this will affect your business. It already is. The only question is whether you're the business that comes up or your competitor."
+          },
+          {
+            "q": "What if I'm already showing up in AI results?",
+            "a": "Good — that means you have a baseline to build on. Appearing once in one answer doesn't mean you're winning. Faro shows you how often you appear, across how many relevant queries, with what consistency, and which competitors are showing up in the same answers. Then we help you appear more reliably, in more contexts, in higher-trust positions."
+          },
+          {
+            "q": "Can Faro help with my Google rankings too?",
+            "a": "The content and citation work we do for AI visibility tends to improve Google rankings as a side effect — both AI models and Google trust the same kinds of authoritative, well-sourced content. We don't market ourselves as an SEO agency and won't promise specific Google ranking outcomes, but our work is structurally sound for traditional search as well."
+          }
+        ]
+      },
+      {
+        "title": "For CPAs and advisors",
+        "slug": "for-advisors",
+        "items": [
+          {
+            "q": "How does the partner program work?",
+            "a": "You refer a client to Faro, we handle everything — onboarding, monthly reporting, optimization work — and you receive a revenue share for as long as they remain a client. You also receive co-branded versions of their reports, so AI visibility becomes a natural part of your advisory relationship without adding work to your plate."
+          },
+          {
+            "q": "What's the revenue share?",
+            "a": "Partner firms earn 20% of monthly revenue per referred client, paid monthly, with no cap. On a $400/month local plan, that's $80/month per client. On a $1,200/month Growth plan, that's $240/month per client. Revenue share continues as long as the client stays with Faro — there's no expiration."
+          },
+          {
+            "q": "Can I white-label the reports for my firm?",
+            "a": "Yes. Growth tier clients and above get reports that can carry your firm's co-branding. Full white-labeling — your brand and domain, Faro invisible to the client — is available for firms managing five or more Faro clients. Contact us to configure it."
+          },
+          {
+            "q": "What kind of clients is Faro best for?",
+            "a": "Faro is a strong fit for service businesses that depend on local reputation: accounting firms, law practices, HVAC and plumbing, dentists, financial advisors, real estate agents, and home services. If your client gets most of their new business from word-of-mouth or referrals, they're exactly the kind of business AI is already trying to surface — and exactly the kind we can help."
+          },
+          {
+            "q": "How much time does this take from my staff?",
+            "a": "The referral takes a conversation. After that, you'll spend roughly ten minutes per client per month reviewing the co-branded report before it goes to them. We don't require your team to manage any tools, log into any systems, or learn any new workflows."
+          }
+        ]
+      },
+      {
+        "title": "Pricing",
+        "slug": "pricing",
+        "items": [
+          {
+            "q": "How much does Faro cost?",
+            "a": "Plans start at $400/month for local businesses — one location, one market, full monthly reporting. Our Growth tier is $1,200/month and covers multi-location businesses, broader keyword monitoring, and white-label reporting options. Mid-cap companies with more complex needs get custom pricing. No setup fees. Month-to-month."
+          },
+          {
+            "q": "Is there a free trial?",
+            "a": "No free trial — our work requires real setup time and ongoing effort from our team, and a two-week trial doesn't give you enough data to evaluate it fairly. Instead, the first month comes with a full refund guarantee: if your baseline AI visibility report doesn't surface at least one meaningful gap or opportunity, we refund the first month, no questions asked."
+          },
+          {
+            "q": "Are there setup fees?",
+            "a": "No. The first month's fee covers everything — the intake call, baseline monitoring setup, your first report, and the first round of optimization work. Nothing extra at the start."
+          },
+          {
+            "q": "What's the contract length?",
+            "a": "Month-to-month. Cancel any time with 30 days' notice. We don't lock people into annual contracts for a service that's supposed to earn your trust every month. If we're not delivering, you should be able to leave."
+          }
+        ]
+      },
+      {
+        "title": "Bilingual support",
+        "slug": "bilingual",
+        "items": [
+          {
+            "q": "Does Faro work for Spanish-speaking businesses?",
+            "a": "Yes, and it's one of the things we do better than anyone. Faro was built in Miami specifically because this market is bilingual — not as an afterthought, but as a core design requirement. We monitor AI queries in both English and Spanish and create content in both languages. Your AI visibility covers both communities."
+          },
+          {
+            "q": "Are reports available in Spanish?",
+            "a": "Yes. You can receive your monthly report in Spanish, English, or both. The Spanish version isn't a translation of the English one — it's written for a Spanish-speaking reader, with context appropriate for someone who may be sharing it with a family business partner or an advisor who works primarily in Spanish."
+          },
+          {
+            "q": "Does Faro track AI search in Spanish prompts?",
+            "a": "Yes. A meaningful share of your potential customers in Miami are asking AI questions in Spanish — and the answers they get are different from the English-language answers. We run a significant portion of our monitoring queries in Spanish, so your report reflects your full local market, not just the English-speaking slice of it."
+          }
+        ]
+      },
+      {
+        "title": "Privacy and data",
+        "slug": "privacy",
+        "items": [
+          {
+            "q": "What data does Faro collect about my business?",
+            "a": "We collect basic business information: your name, business name, location, category, and contact info, plus any details you share during onboarding that help us write accurate content. We don't access your financial records, customer data, internal systems, or anything beyond what you explicitly give us. We collect only what we need to do the work."
+          },
+          {
+            "q": "Do you share my data with anyone?",
+            "a": "No. We don't sell client data, share it with third parties, or use it to train AI models. The information you give us is used only to deliver your Faro service. If you refer a client, they'll know you referred them — that's it. We don't share details of your account or business with anyone, including the client you referred."
+          },
+          {
+            "q": "Can I delete my account?",
+            "a": "Yes, at any time. Email hello@heyfaro.com with a deletion request and we'll delete your account and all associated data within 30 days. We retain no backups of client data after the deletion window closes."
+          }
+        ]
+      }
+    ]
   }
 }

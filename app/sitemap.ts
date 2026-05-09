@@ -21,6 +21,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
+  const faqEntries: MetadataRoute.Sitemap = ["en", "es"].map((locale) => ({
+    url: `${BASE_URL}/${locale}/faq`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.9,
+  }));
+
   return [
     {
       url: `${BASE_URL}/en`,
@@ -34,6 +41,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.9,
     },
+    ...faqEntries,
     ...blogIndexEntries,
     ...postEntries,
   ];
