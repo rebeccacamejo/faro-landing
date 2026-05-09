@@ -2,6 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes nav-cta-pulse {
+  0%   { transform: scale(1);    opacity: 0.55; }
+  30%  { transform: scale(1.2);  opacity: 0;    }
+  100% { transform: scale(1.2);  opacity: 0;    }
+}
+
+.nav-cta-ring {
+  position: absolute;
+  inset: -4px;
+  border-radius: 10px; /* rounded-md (6px) + 4px inset */
+  border: 1.5px solid #B08D57;
+  pointer-events: none;
+  animation: nav-cta-pulse 4s ease-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-cta-ring {
+    display: none;
+  }
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
