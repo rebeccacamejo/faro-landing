@@ -1,11 +1,31 @@
-import { useTranslations } from "next-intl";
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import Image from "next/image";
-import Navbar from "../components/Navbar";
-import LocaleToggle from "../components/LocaleToggle";
-import LivePrompts from "../components/LivePrompts";
-import FadeUp from "../components/FadeUp";
-import WaitlistBand from "../components/WaitlistBand";
+import Navbar from "@/app/components/Navbar";
+import LocaleToggle from "@/app/components/LocaleToggle";
+import LivePrompts from "@/app/components/LivePrompts";
+import FadeUp from "@/app/components/FadeUp";
+import WaitlistBand from "@/app/components/WaitlistBand";
+import ReferralBanner from "@/app/components/ReferralBanner";
+
+// Referrer data is dynamic; always SSR
+export const dynamic = "force-dynamic";
+
+async function getReferrer(
+  code: string,
+): Promise<{ business_name: string | null } | null> {
+  try {
+    const { getSupabase } = await import("@/lib/supabase");
+    const db = getSupabase();
+    const { data } = await db
+      .from("waitlist_signups")
+      .select("business_name")
+      .eq("referral_code", code.toLowerCase())
+      .maybeSingle();
+    return data ?? null;
+  } catch {
+    return null;
+  }
+}
 
 function LighthouseBeam() {
   return (
@@ -30,22 +50,32 @@ function LighthouseBeam() {
   );
 }
 
-export default function Home({
-  params: { locale },
-  searchParams,
+export default async function ReferPage({
+  params: { locale, code },
 }: {
-  params: { locale: string };
-  searchParams?: { ref?: string };
+  params: { locale: string; code: string };
 }) {
   setRequestLocale(locale);
-  const t = useTranslations();
-  const tPrompts = useTranslations("prompts");
-  const promptCards = (tPrompts.raw("cards") as Array<{ agent: string; query: string }>);
-  const referralRef = typeof searchParams?.ref === "string" ? searchParams.ref : undefined;
+
+  const referrer = await getReferrer(code);
+  const isValid = referrer !== null;
+
+  const [t, tPrompts] = await Promise.all([
+    getTranslations({ locale }),
+    getTranslations({ locale, namespace: "prompts" }),
+  ]);
+  const promptCards = tPrompts.raw("cards") as Array<{ agent: string; query: string }>;
 
   return (
     <>
       <Navbar />
+
+      {/* Referral banner — sets faro_ref cookie and fires analytics client-side */}
+      <ReferralBanner
+        code={code}
+        referrerBusiness={referrer?.business_name ?? null}
+        isValid={isValid}
+      />
 
       <main id="main-content">
         {/* ── HERO ─────────────────────────────────────────────────── */}
@@ -56,7 +86,6 @@ export default function Home({
           <LighthouseBeam />
           <div className="max-w-[1100px] mx-auto px-6 py-24 md:py-32 w-full">
             <div className="flex flex-col md:flex-row items-center gap-12 md:gap-16">
-              {/* Left — headline + CTAs */}
               <div className="flex-1">
                 <h1
                   id="hero-heading"
@@ -82,14 +111,9 @@ export default function Home({
                   </a>
                 </div>
               </div>
-
-              {/* Right — live AI query cards */}
               <div className="w-full md:w-[420px] flex-shrink-0">
                 <div className="mb-3 flex items-center gap-2">
-                  <span
-                    aria-hidden="true"
-                    className="h-1.5 w-1.5 animate-pulse rounded-full bg-terracotta"
-                  />
+                  <span aria-hidden="true" className="h-1.5 w-1.5 animate-pulse rounded-full bg-terracotta" />
                   <span className="font-sans text-[11px] uppercase tracking-widest text-charcoal/40">
                     {tPrompts("liveLabel")}
                   </span>
@@ -116,31 +140,18 @@ export default function Home({
               </h2>
             </FadeUp>
             <div className="max-w-[700px] space-y-6">
-              <p className="font-sans text-lg leading-loose text-charcoal">
-                {t("problem.para1")}
-              </p>
-              <p className="font-sans text-lg leading-loose text-charcoal">
-                {t("problem.para2")}
-              </p>
-              <p className="font-sans text-lg leading-loose text-charcoal">
-                {t("problem.para3")}
-              </p>
+              <p className="font-sans text-lg leading-loose text-charcoal">{t("problem.para1")}</p>
+              <p className="font-sans text-lg leading-loose text-charcoal">{t("problem.para2")}</p>
+              <p className="font-sans text-lg leading-loose text-charcoal">{t("problem.para3")}</p>
             </div>
           </div>
         </section>
 
         {/* ── HOW IT WORKS ─────────────────────────────────────────── */}
-        <section
-          id="how-it-works"
-          aria-labelledby="how-heading"
-          className="bg-cream"
-        >
+        <section id="how-it-works" aria-labelledby="how-heading" className="bg-cream">
           <div className="max-w-[1100px] mx-auto px-6 py-24 md:py-32">
             <FadeUp>
-              <h2
-                id="how-heading"
-                className="font-serif text-[32px] md:text-[40px] text-navy mb-16"
-              >
+              <h2 id="how-heading" className="font-serif text-[32px] md:text-[40px] text-navy mb-16">
                 {t("howItWorks.heading")}
               </h2>
             </FadeUp>
@@ -148,21 +159,14 @@ export default function Home({
               {(["step1", "step2", "step3"] as const).map((step, i) => (
                 <div key={step}>
                   <FadeUp delay={i * 0.1 + 0.2} className="mb-5">
-                    <span
-                      aria-hidden="true"
-                      className="block font-serif text-[48px] text-terracotta leading-none"
-                    >
+                    <span aria-hidden="true" className="block font-serif text-[48px] text-terracotta leading-none">
                       {i + 1}
                     </span>
                   </FadeUp>
                   <FadeUp delay={i * 0.1}>
                     <div>
-                      <h3 className="font-serif text-xl text-navy mb-4">
-                        {t(`howItWorks.${step}.heading`)}
-                      </h3>
-                      <p className="font-sans text-base leading-relaxed text-charcoal/80">
-                        {t(`howItWorks.${step}.body`)}
-                      </p>
+                      <h3 className="font-serif text-xl text-navy mb-4">{t(`howItWorks.${step}.heading`)}</h3>
+                      <p className="font-sans text-base leading-relaxed text-charcoal/80">{t(`howItWorks.${step}.body`)}</p>
                     </div>
                   </FadeUp>
                 </div>
@@ -172,11 +176,6 @@ export default function Home({
         </section>
 
         {/* ── MIAMI ANCHOR ─────────────────────────────────────────── */}
-        {/*
-          Photo: La Esquina de la Fama, Calle Ocho, Little Havana, Miami.
-          Source: Pexels #8707116 — Sami Abdullah (free commercial use).
-          Cropped landscape from portrait original; optimized to ~128 KB via sharp.
-        */}
         <section aria-label="Built for South Florida">
           <div className="relative w-full overflow-hidden" style={{ height: "480px" }}>
             <Image
@@ -187,29 +186,16 @@ export default function Home({
               priority={false}
               sizes="100vw"
             />
-            {/* Cream wash at 8% to tie the image into the page palette */}
-            <div
-              className="absolute inset-0 pointer-events-none"
-              style={{ backgroundColor: "rgba(248,244,237,0.08)" }}
-              aria-hidden="true"
-            />
+            <div className="absolute inset-0 pointer-events-none" style={{ backgroundColor: "rgba(248,244,237,0.08)" }} aria-hidden="true" />
           </div>
           <div className="bg-cream py-10 text-center px-6">
-            <p className="font-serif text-[28px] italic text-navy leading-tight mb-3">
-              Made in Miami. For Miami.
-            </p>
-            <p className="font-sans text-sm text-charcoal/60">
-              We built Faro for the businesses that built this city.
-            </p>
+            <p className="font-serif text-[28px] italic text-navy leading-tight mb-3">Made in Miami. For Miami.</p>
+            <p className="font-sans text-sm text-charcoal/60">We built Faro for the businesses that built this city.</p>
           </div>
         </section>
 
         {/* ── FOR ADVISORS ─────────────────────────────────────────── */}
-        <section
-          id="for-advisors"
-          aria-labelledby="advisors-heading"
-          className="bg-cream-deep"
-        >
+        <section id="for-advisors" aria-labelledby="advisors-heading" className="bg-cream-deep">
           <div className="max-w-[1100px] mx-auto px-6 py-24 md:py-32">
             <FadeUp>
               <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-start">
@@ -222,12 +208,8 @@ export default function Home({
                   </h2>
                 </div>
                 <div className="space-y-6">
-                  <p className="font-sans text-lg leading-relaxed text-charcoal">
-                    {t("forAdvisors.para1")}
-                  </p>
-                  <p className="font-sans text-lg leading-relaxed text-charcoal">
-                    {t("forAdvisors.para2")}
-                  </p>
+                  <p className="font-sans text-lg leading-relaxed text-charcoal">{t("forAdvisors.para1")}</p>
+                  <p className="font-sans text-lg leading-relaxed text-charcoal">{t("forAdvisors.para2")}</p>
                   <a
                     href="#waitlist?audience=advisor"
                     className="inline-block bg-navy hover:bg-navy/90 text-cream font-sans font-medium text-base px-7 py-3.5 rounded-md transition-colors no-underline hover:no-underline focus:outline-none focus:ring-2 focus:ring-navy focus:ring-offset-2 focus:ring-offset-cream-deep mt-2"
@@ -241,21 +223,15 @@ export default function Home({
         </section>
 
         {/* ── WAITLIST ─────────────────────────────────────────────── */}
-        <section
-          id="waitlist"
-          aria-labelledby="waitlist-heading"
-          className="bg-cream overflow-hidden"
-        >
+        <section id="waitlist" aria-labelledby="waitlist-heading" className="bg-cream overflow-hidden">
           <WaitlistBand
             headingId="waitlist-heading"
             headingText={t("waitlist.heading")}
             subheadText={t("waitlist.subhead")}
-            referralRef={referralRef}
           />
         </section>
       </main>
 
-      {/* ── FOOTER ───────────────────────────────────────────────────── */}
       <footer className="bg-cream-deep" role="contentinfo">
         <div className="max-w-[1100px] mx-auto px-6 py-10 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="font-sans text-sm text-charcoal/60 text-center sm:text-left">

@@ -57,9 +57,26 @@
     "audienceAdvisor": "I’m a CPA or advisor",
     "submit": "Join waitlist",
     "submitting": "Submitting…",
-    "confirmationHeading": "We’ll be in touch.",
-    "confirmationBody": "You’re on the list. We’ll reach out within a week.",
-    "networkError": "Network error — please check your connection and try again."
+    "networkError": "Network error — please check your connection and try again.",
+    "confirmation": {
+      "heading": "You’re on the list.",
+      "positionOf": "You’re #{position} of {total}.",
+      "pilotSlots": "We’re onboarding {slots} pilot clients.",
+      "moveUpHeading": "Move up the waitlist.",
+      "moveUpBody": "We pick our first ten pilot clients based on signup order — and how many other businesses you bring with you. Refer three businesses to jump to the front.",
+      "yourLink": "Your referral link",
+      "copyLink": "Copy link",
+      "copied": "Copied",
+      "shareEmail": "Email",
+      "shareWhatsApp": "WhatsApp",
+      "shareLinkedIn": "LinkedIn",
+      "referralCount": "{count} of 3 referred",
+      "priorityUnlocked": "Pilot priority unlocked",
+      "checkSpot": "Already signed up?",
+      "checkSpotCta": "Check your spot",
+      "lookupEmailPlaceholder": "you@yourbusiness.com",
+      "lookupSubmit": "Check"
+    }
   },
   "prompts": {
     "liveLabel": "Live AI queries happening right now",
@@ -74,6 +91,12 @@
       { "agent": "Claude",    "query": "Top-rated dentist near Brickell — any recommendations?" },
       { "agent": "ChatGPT",   "query": "Good roofing contractor for a small business in Kendall" }
     ]
+  },
+  "refer": {
+    "bannerValidWith": "{business} invited you to Faro.",
+    "bannerValidWithout": "A friend invited you to Faro.",
+    "bannerInvalid": "That referral link wasn't valid, but you can still join the waitlist.",
+    "dismiss": "Dismiss"
   },
   "footer": {
     "tagline": "Faro · Miami, FL ·",

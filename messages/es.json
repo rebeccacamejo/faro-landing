@@ -57,9 +57,26 @@
     "audienceAdvisor": "Soy CPA o asesor",
     "submit": "Únete",
     "submitting": "Enviando…",
-    "confirmationHeading": "Estaremos en contacto.",
-    "confirmationBody": "Estás en la lista. Te contactaremos en una semana.",
-    "networkError": "Error de red — verifica tu conexión e intenta de nuevo."
+    "networkError": "Error de red — verifica tu conexión e intenta de nuevo.",
+    "confirmation": {
+      "heading": "Estás en la lista.",
+      "positionOf": "Eres el #{position} de {total}.",
+      "pilotSlots": "Estamos incorporando a {slots} clientes piloto.",
+      "moveUpHeading": "Sube en la lista.",
+      "moveUpBody": "Elegimos nuestros primeros diez clientes piloto según el orden de inscripción — y cuántos otros negocios traigas contigo. Refiere a tres negocios para avanzar al frente.",
+      "yourLink": "Tu enlace de referido",
+      "copyLink": "Copiar enlace",
+      "copied": "Copiado",
+      "shareEmail": "Correo",
+      "shareWhatsApp": "WhatsApp",
+      "shareLinkedIn": "LinkedIn",
+      "referralCount": "{count} de 3 referidos",
+      "priorityUnlocked": "Prioridad piloto desbloqueada",
+      "checkSpot": "¿Ya te inscribiste?",
+      "checkSpotCta": "Revisa tu lugar",
+      "lookupEmailPlaceholder": "tu@tunegocio.com",
+      "lookupSubmit": "Verificar"
+    }
   },
   "prompts": {
     "liveLabel": "Consultas de IA en tiempo real",
@@ -74,6 +91,12 @@
       { "agent": "Claude",    "query": "¿Cuál es el dentista mejor valorado cerca de Brickell?" },
       { "agent": "ChatGPT",   "query": "¿Buena empresa de techos para un negocio pequeño en Kendall?" }
     ]
+  },
+  "refer": {
+    "bannerValidWith": "{business} te invitó a Faro.",
+    "bannerValidWithout": "Un amigo te invitó a Faro.",
+    "bannerInvalid": "Ese enlace de referido no era válido, pero igual puedes unirte a la lista de espera.",
+    "dismiss": "Cerrar"
   },
   "footer": {
     "tagline": "Faro · Miami, FL ·",

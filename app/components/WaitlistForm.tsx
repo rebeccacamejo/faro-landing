@@ -1,13 +1,28 @@
 "use client";
 
 import { useState, useRef } from "react";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
+import type { WaitlistConfirmationData } from "@/lib/types";
 
-type Status = "idle" | "loading" | "success" | "error";
+interface Props {
+  onSuccess: (data: WaitlistConfirmationData) => void;
+  // URL ?ref= param passed from the server component; cookie is read client-side as fallback
+  referralRef?: string;
+}
 
-export default function WaitlistForm() {
+type Status = "idle" | "loading" | "error";
+
+function getRefFromCookie(): string | undefined {
+  if (typeof document === "undefined") return undefined;
+  const match = document.cookie.match(/faro_ref=([^;]+)/);
+  return match?.[1] ?? undefined;
+}
+
+export default function WaitlistForm({ onSuccess, referralRef }: Props) {
   const t = useTranslations("waitlist");
-  const [audience, setAudience] = useState<"business" | "advisor">("business");
+  const locale = useLocale();
+
+  const [audience, setAudience] = useState<"owner" | "advisor">("owner");
   const [status, setStatus] = useState<Status>("idle");
   const [errorMsg, setErrorMsg] = useState("");
   const emailRef = useRef<HTMLInputElement>(null);
@@ -20,12 +35,14 @@ export default function WaitlistForm() {
 
     const email = emailRef.current?.value.trim() ?? "";
     const business = businessRef.current?.value.trim() || undefined;
+    // URL param (via page-level searchParams) takes precedence over cookie
+    const ref = referralRef ?? getRefFromCookie();
 
     try {
       const res = await fetch("/api/waitlist", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, business, audience }),
+        body: JSON.stringify({ email, business, audience, locale, ref }),
       });
 
       const data = await res.json();
@@ -36,24 +53,11 @@ export default function WaitlistForm() {
         return;
       }
 
-      setStatus("success");
+      onSuccess(data as WaitlistConfirmationData);
     } catch {
       setErrorMsg(t("networkError"));
       setStatus("error");
     }
-  }
-
-  if (status === "success") {
-    return (
-      <div className="text-center py-8">
-        <h3 className="font-serif text-4xl text-cream mb-4">
-          {t("confirmationHeading")}
-        </h3>
-        <p className="font-sans text-cream/70 text-lg">
-          {t("confirmationBody")}
-        </p>
-      </div>
-    );
   }
 
   const loading = status === "loading";
@@ -102,13 +106,13 @@ export default function WaitlistForm() {
         <div className="flex rounded-md overflow-hidden border border-cream/30 w-fit">
           <button
             type="button"
-            onClick={() => setAudience("business")}
+            onClick={() => setAudience("owner")}
             className={`px-5 py-2.5 font-sans text-sm transition-colors focus:outline-none focus:ring-2 focus:ring-inset focus:ring-terracotta ${
-              audience === "business"
+              audience === "owner"
                 ? "bg-cream text-navy font-medium"
                 : "bg-transparent text-cream/70 hover:text-cream"
             }`}
-            aria-pressed={audience === "business"}
+            aria-pressed={audience === "owner"}
           >
             {t("audienceBusiness")}
           </button>
@@ -163,19 +167,8 @@ function Spinner() {
       fill="none"
       viewBox="0 0 24 24"
     >
-      <circle
-        className="opacity-25"
-        cx="12"
-        cy="12"
-        r="10"
-        stroke="currentColor"
-        strokeWidth="4"
-      />
-      <path
-        className="opacity-75"
-        fill="currentColor"
-        d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
-      />
+      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z" />
     </svg>
   );
 }

@@ -1,16 +1,34 @@
 "use client";
 
+import { useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import WaitlistForm from "./WaitlistForm";
+import WaitlistConfirmation from "./WaitlistConfirmation";
+import type { WaitlistConfirmationData } from "@/lib/types";
 
 interface Props {
   headingId: string;
   headingText: string;
   subheadText: string;
+  referralRef?: string;
 }
 
-export default function WaitlistBand({ headingId, headingText, subheadText }: Props) {
+export default function WaitlistBand({ headingId, headingText, subheadText, referralRef }: Props) {
   const reduced = useReducedMotion();
+  const [confirmationData, setConfirmationData] = useState<WaitlistConfirmationData | null>(null);
+
+  if (confirmationData) {
+    return (
+      <motion.div
+        initial={{ opacity: 0, y: 16 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4, ease: "easeOut" }}
+        className="max-w-[1100px] mx-auto px-6"
+      >
+        <WaitlistConfirmation data={confirmationData} />
+      </motion.div>
+    );
+  }
 
   return (
     <motion.div
@@ -44,7 +62,7 @@ export default function WaitlistBand({ headingId, headingText, subheadText }: Pr
           viewport={{ once: true, margin: "-10%" }}
           transition={{ duration: reduced ? 0 : 0.4, delay: reduced ? 0 : 0.9 }}
         >
-          <WaitlistForm />
+          <WaitlistForm onSuccess={setConfirmationData} referralRef={referralRef} />
         </motion.div>
       </div>
     </motion.div>
