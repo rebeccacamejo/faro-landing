@@ -1,8 +1,10 @@
 import { useTranslations } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import Navbar from "../components/Navbar";
-import WaitlistForm from "../components/WaitlistForm";
 import LocaleToggle from "../components/LocaleToggle";
+import LivePrompts from "../components/LivePrompts";
+import FadeUp from "../components/FadeUp";
+import WaitlistBand from "../components/WaitlistBand";
 
 function LighthouseBeam() {
   return (
@@ -30,6 +32,8 @@ function LighthouseBeam() {
 export default function Home({ params: { locale } }: { params: { locale: string } }) {
   setRequestLocale(locale);
   const t = useTranslations();
+  const tPrompts = useTranslations("prompts");
+  const promptCards = (tPrompts.raw("cards") as Array<{ agent: string; query: string }>);
 
   return (
     <>
@@ -43,29 +47,50 @@ export default function Home({ params: { locale } }: { params: { locale: string 
         >
           <LighthouseBeam />
           <div className="max-w-[1100px] mx-auto px-6 py-24 md:py-32 w-full">
-            <div className="max-w-[720px]">
-              <h1
-                id="hero-heading"
-                className="font-serif text-[40px] md:text-[56px] lg:text-[68px] leading-[1.1] tracking-tight text-navy mb-8"
-              >
-                {t("hero.headline")}
-              </h1>
-              <p className="font-sans text-lg md:text-xl text-charcoal/70 leading-relaxed mb-10 max-w-[600px]">
-                {t("hero.subhead")}
-              </p>
-              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-                <a
-                  href="#waitlist"
-                  className="bg-terracotta hover:bg-terracotta/90 text-cream font-sans font-medium text-lg px-8 py-4 rounded-md transition-colors no-underline hover:no-underline focus:outline-none focus:ring-2 focus:ring-terracotta focus:ring-offset-2 focus:ring-offset-cream"
+            <div className="flex flex-col md:flex-row items-center gap-12 md:gap-16">
+              {/* Left — headline + CTAs */}
+              <div className="flex-1">
+                <h1
+                  id="hero-heading"
+                  className="font-serif text-[40px] md:text-[48px] lg:text-[60px] leading-[1.1] tracking-tight text-navy mb-8"
                 >
-                  {t("hero.cta")}
-                </a>
-                <a
-                  href="#for-advisors"
-                  className="font-sans text-base text-charcoal/60 hover:text-terracotta no-underline hover:no-underline hover:underline transition-colors"
-                >
-                  {t("hero.advisorLink")}
-                </a>
+                  {t("hero.headline")}
+                </h1>
+                <p className="font-sans text-lg md:text-xl text-charcoal/70 leading-relaxed mb-10 max-w-[560px]">
+                  {t("hero.subhead")}
+                </p>
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                  <a
+                    href="#waitlist"
+                    className="bg-terracotta hover:bg-terracotta/90 text-cream font-sans font-medium text-lg px-8 py-4 rounded-md transition-colors no-underline hover:no-underline focus:outline-none focus:ring-2 focus:ring-terracotta focus:ring-offset-2 focus:ring-offset-cream"
+                  >
+                    {t("hero.cta")}
+                  </a>
+                  <a
+                    href="#for-advisors"
+                    className="font-sans text-base text-charcoal/60 hover:text-terracotta no-underline hover:no-underline hover:underline transition-colors"
+                  >
+                    {t("hero.advisorLink")}
+                  </a>
+                </div>
+              </div>
+
+              {/* Right — live AI query cards */}
+              <div className="w-full md:w-[420px] flex-shrink-0">
+                <div className="mb-3 flex items-center gap-2">
+                  <span
+                    aria-hidden="true"
+                    className="h-1.5 w-1.5 animate-pulse rounded-full bg-terracotta"
+                  />
+                  <span className="font-sans text-[11px] uppercase tracking-widest text-charcoal/40">
+                    {tPrompts("liveLabel")}
+                  </span>
+                </div>
+                <LivePrompts
+                  cards={promptCards}
+                  searchingText={tPrompts("searching")}
+                  liveLabel={tPrompts("liveLabel")}
+                />
               </div>
             </div>
           </div>
@@ -74,12 +99,14 @@ export default function Home({ params: { locale } }: { params: { locale: string 
         {/* ── THE PROBLEM ──────────────────────────────────────────── */}
         <section aria-labelledby="problem-heading" className="bg-cream-deep">
           <div className="max-w-[1100px] mx-auto px-6 py-24 md:py-32">
-            <h2
-              id="problem-heading"
-              className="font-serif text-[32px] md:text-[40px] leading-tight text-navy mb-12 max-w-[700px]"
-            >
-              {t("problem.heading")}
-            </h2>
+            <FadeUp>
+              <h2
+                id="problem-heading"
+                className="font-serif text-[32px] md:text-[40px] leading-tight text-navy mb-12 max-w-[700px]"
+              >
+                {t("problem.heading")}
+              </h2>
+            </FadeUp>
             <div className="max-w-[700px] space-y-6">
               <p className="font-sans text-lg leading-loose text-charcoal">
                 {t("problem.para1")}
@@ -101,27 +128,35 @@ export default function Home({ params: { locale } }: { params: { locale: string 
           className="bg-cream"
         >
           <div className="max-w-[1100px] mx-auto px-6 py-24 md:py-32">
-            <h2
-              id="how-heading"
-              className="font-serif text-[32px] md:text-[40px] text-navy mb-16"
-            >
-              {t("howItWorks.heading")}
-            </h2>
+            <FadeUp>
+              <h2
+                id="how-heading"
+                className="font-serif text-[32px] md:text-[40px] text-navy mb-16"
+              >
+                {t("howItWorks.heading")}
+              </h2>
+            </FadeUp>
             <div className="grid md:grid-cols-3 gap-12 md:gap-8 lg:gap-16">
               {(["step1", "step2", "step3"] as const).map((step, i) => (
                 <div key={step}>
-                  <span
-                    aria-hidden="true"
-                    className="block font-serif text-[48px] text-terracotta leading-none mb-5"
-                  >
-                    {i + 1}
-                  </span>
-                  <h3 className="font-serif text-xl text-navy mb-4">
-                    {t(`howItWorks.${step}.heading`)}
-                  </h3>
-                  <p className="font-sans text-base leading-relaxed text-charcoal/80">
-                    {t(`howItWorks.${step}.body`)}
-                  </p>
+                  <FadeUp delay={i * 0.1 + 0.2} className="mb-5">
+                    <span
+                      aria-hidden="true"
+                      className="block font-serif text-[48px] text-terracotta leading-none"
+                    >
+                      {i + 1}
+                    </span>
+                  </FadeUp>
+                  <FadeUp delay={i * 0.1}>
+                    <div>
+                      <h3 className="font-serif text-xl text-navy mb-4">
+                        {t(`howItWorks.${step}.heading`)}
+                      </h3>
+                      <p className="font-sans text-base leading-relaxed text-charcoal/80">
+                        {t(`howItWorks.${step}.body`)}
+                      </p>
+                    </div>
+                  </FadeUp>
                 </div>
               ))}
             </div>
@@ -135,30 +170,32 @@ export default function Home({ params: { locale } }: { params: { locale: string 
           className="bg-cream-deep"
         >
           <div className="max-w-[1100px] mx-auto px-6 py-24 md:py-32">
-            <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-start">
-              <div>
-                <h2
-                  id="advisors-heading"
-                  className="font-serif text-[32px] md:text-[40px] leading-tight text-navy"
-                >
-                  {t("forAdvisors.heading")}
-                </h2>
+            <FadeUp>
+              <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-start">
+                <div>
+                  <h2
+                    id="advisors-heading"
+                    className="font-serif text-[32px] md:text-[40px] leading-tight text-navy"
+                  >
+                    {t("forAdvisors.heading")}
+                  </h2>
+                </div>
+                <div className="space-y-6">
+                  <p className="font-sans text-lg leading-relaxed text-charcoal">
+                    {t("forAdvisors.para1")}
+                  </p>
+                  <p className="font-sans text-lg leading-relaxed text-charcoal">
+                    {t("forAdvisors.para2")}
+                  </p>
+                  <a
+                    href="#waitlist?audience=advisor"
+                    className="inline-block bg-navy hover:bg-navy/90 text-cream font-sans font-medium text-base px-7 py-3.5 rounded-md transition-colors no-underline hover:no-underline focus:outline-none focus:ring-2 focus:ring-navy focus:ring-offset-2 focus:ring-offset-cream-deep mt-2"
+                  >
+                    {t("forAdvisors.cta")}
+                  </a>
+                </div>
               </div>
-              <div className="space-y-6">
-                <p className="font-sans text-lg leading-relaxed text-charcoal">
-                  {t("forAdvisors.para1")}
-                </p>
-                <p className="font-sans text-lg leading-relaxed text-charcoal">
-                  {t("forAdvisors.para2")}
-                </p>
-                <a
-                  href="#waitlist?audience=advisor"
-                  className="inline-block bg-navy hover:bg-navy/90 text-cream font-sans font-medium text-base px-7 py-3.5 rounded-md transition-colors no-underline hover:no-underline focus:outline-none focus:ring-2 focus:ring-navy focus:ring-offset-2 focus:ring-offset-cream-deep mt-2"
-                >
-                  {t("forAdvisors.cta")}
-                </a>
-              </div>
-            </div>
+            </FadeUp>
           </div>
         </section>
 
@@ -166,22 +203,13 @@ export default function Home({ params: { locale } }: { params: { locale: string 
         <section
           id="waitlist"
           aria-labelledby="waitlist-heading"
-          className="bg-navy"
+          className="bg-cream overflow-hidden"
         >
-          <div className="max-w-[1100px] mx-auto px-6 py-24 md:py-32">
-            <div className="max-w-lg mx-auto text-center mb-10">
-              <h2
-                id="waitlist-heading"
-                className="font-serif text-[36px] md:text-[48px] text-cream mb-4"
-              >
-                {t("waitlist.heading")}
-              </h2>
-              <p className="font-sans text-lg text-cream/70">
-                {t("waitlist.subhead")}
-              </p>
-            </div>
-            <WaitlistForm />
-          </div>
+          <WaitlistBand
+            headingId="waitlist-heading"
+            headingText={t("waitlist.heading")}
+            subheadText={t("waitlist.subhead")}
+          />
         </section>
       </main>
 

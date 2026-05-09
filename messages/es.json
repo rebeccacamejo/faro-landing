@@ -60,6 +60,20 @@
     "confirmationBody": "Estás en la lista. Te contactaremos en una semana.",
     "networkError": "Error de red — verifica tu conexión e intenta de nuevo."
   },
+  "prompts": {
+    "liveLabel": "Consultas de IA en tiempo real",
+    "searching": "Buscando negocios locales…",
+    "cards": [
+      { "agent": "ChatGPT",   "query": "¿Cuál es la mejor empresa de aire acondicionado en Doral?" },
+      { "agent": "Perplexity","query": "Find me a plumber in Hialeah who speaks Spanish" },
+      { "agent": "ChatGPT",   "query": "¿Cuál es el mejor contador para un restaurante pequeño en Miami?" },
+      { "agent": "Claude",    "query": "¿Hay un electricista confiable cerca de Kendall?" },
+      { "agent": "Gemini",    "query": "Who should I hire to remodel my kitchen in Coral Gables?" },
+      { "agent": "Perplexity","query": "¿Cuál es el mejor agente de seguros para un food truck en Miami-Dade?" },
+      { "agent": "Claude",    "query": "¿Cuál es el dentista mejor valorado cerca de Brickell?" },
+      { "agent": "ChatGPT",   "query": "¿Buena empresa de techos para un negocio pequeño en Kendall?" }
+    ]
+  },
   "footer": {
     "tagline": "Faro · Miami, FL ·",
     "email": "hello@heyfaro.com",
