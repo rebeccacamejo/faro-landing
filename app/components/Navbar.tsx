@@ -45,6 +45,12 @@ export default function Navbar() {
           >
             {t("forAdvisors")}
           </a>
+          <Link
+            href="/blog"
+            className="font-sans text-sm text-charcoal/80 hover:text-navy no-underline hover:no-underline transition-colors"
+          >
+            {t("blog")}
+          </Link>
 
           <LocaleToggle />
 
