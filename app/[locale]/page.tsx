@@ -1,5 +1,6 @@
 import { useTranslations } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
+import Image from "next/image";
 import Navbar from "../components/Navbar";
 import LocaleToggle from "../components/LocaleToggle";
 import LivePrompts from "../components/LivePrompts";
@@ -160,6 +161,39 @@ export default function Home({ params: { locale } }: { params: { locale: string 
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* ── MIAMI ANCHOR ─────────────────────────────────────────── */}
+        {/*
+          Photo: La Esquina de la Fama, Calle Ocho, Little Havana, Miami.
+          Source: Pexels #8707116 — Sami Abdullah (free commercial use).
+          Cropped landscape from portrait original; optimized to ~128 KB via sharp.
+        */}
+        <section aria-label="Built for South Florida">
+          <div className="relative w-full overflow-hidden" style={{ height: "480px" }}>
+            <Image
+              src="/miami-anchor.jpg"
+              alt="La Esquina de la Fama on Calle Ocho — a Cuban restaurant in Miami's Little Havana, warm string lights glowing at dusk, bilingual menus, a worker at the counter"
+              fill
+              className="object-cover object-center"
+              priority={false}
+              sizes="100vw"
+            />
+            {/* Cream wash at 8% to tie the image into the page palette */}
+            <div
+              className="absolute inset-0 pointer-events-none"
+              style={{ backgroundColor: "rgba(248,244,237,0.08)" }}
+              aria-hidden="true"
+            />
+          </div>
+          <div className="bg-cream py-10 text-center px-6">
+            <p className="font-serif text-[28px] italic text-navy leading-tight mb-3">
+              Made in Miami. For Miami.
+            </p>
+            <p className="font-sans text-sm text-charcoal/60">
+              We built Faro for the businesses that built this city.
+            </p>
           </div>
         </section>
 
