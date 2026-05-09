@@ -1,7 +1,6 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import Image from "next/image";
 import Navbar from "@/app/components/Navbar";
-import LocaleToggle from "@/app/components/LocaleToggle";
 import LivePrompts from "@/app/components/LivePrompts";
 import FadeUp from "@/app/components/FadeUp";
 import WaitlistBand from "@/app/components/WaitlistBand";
@@ -243,7 +242,9 @@ export default async function ReferPage({
               {t("footer.email")}
             </a>
           </p>
-          <LocaleToggle />
+          <p className="font-sans text-xs text-charcoal/50">
+            Available in English and Español
+          </p>
         </div>
       </footer>
     </>

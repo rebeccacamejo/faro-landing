@@ -4,6 +4,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
+import ScrollRestorer from "@/app/components/ScrollRestorer";
 import "../globals.css";
 
 const inter = Inter({
@@ -101,6 +102,7 @@ export default async function LocaleLayout({ children, params: { locale } }: Pro
     <html lang={locale} className={`${inter.variable} ${fraunces.variable}`}>
       <body>
         <NextIntlClientProvider messages={messages}>
+          <ScrollRestorer />
           {children}
         </NextIntlClientProvider>
       </body>

@@ -2,7 +2,6 @@ import { useTranslations } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import Image from "next/image";
 import Navbar from "../components/Navbar";
-import LocaleToggle from "../components/LocaleToggle";
 import LivePrompts from "../components/LivePrompts";
 import FadeUp from "../components/FadeUp";
 import WaitlistBand from "../components/WaitlistBand";
@@ -267,7 +266,9 @@ export default function Home({
               {t("footer.email")}
             </a>
           </p>
-          <LocaleToggle />
+          <p className="font-sans text-xs text-charcoal/50">
+            Available in English and Español
+          </p>
         </div>
       </footer>
     </>
