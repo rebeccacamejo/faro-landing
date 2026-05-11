@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# faro-landing
 
-## Getting Started
+The Faro marketing site — a bilingual (English/Spanish) Next.js 14 App Router site at [heyfaro.com](https://heyfaro.com). It handles the waitlist, referral program, blog, FAQ, and privacy pages. It also ships the `faro-pixel` attribution tracker as a built package that client websites embed to measure AI-driven traffic.
 
-First, run the development server:
+```mermaid
+graph LR
+    VISITOR[Visitor] --> SITE[heyfaro.com\nNext.js 14]
+    SITE --> WL[Waitlist\nSupabase table]
+    SITE --> BLOG[MDX Blog\n/blog]
+    SITE --> REF[Referral\n/refer/:code]
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+    CLIENT_SITE[Client Website] --> PIXEL[faro-pixel.js\nattribution tracker]
+    PIXEL --> ENGINE[faro-engine\nattribution API]
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+*Written description: Visitors land on heyfaro.com, join the waitlist stored in Supabase, share referral links, and read the blog. Separately, each client's website embeds the faro-pixel script which fires attribution events back to faro-engine when visitors arrive from AI-generated answers.*
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Quick start
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+**Prerequisites:** Node 20+, npm. No backend needed for the marketing site itself.
 
-## Learn More
+```bash
+git clone https://github.com/rebeccacamejo/faro-landing
+cd faro-landing
 
-To learn more about Next.js, take a look at the following resources:
+npm install
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Copy and fill env vars
+cp .env.local.example .env.local
+# Required: NEXT_PUBLIC_SUPABASE_URL, NEXT_PUBLIC_SUPABASE_ANON_KEY
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+npm run dev
+```
 
-## Deploy on Vercel
+Site runs at `http://localhost:3000`. Toggle locale at `/en` vs `/es`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Key env vars
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| Variable | Purpose |
+|---|---|
+| `NEXT_PUBLIC_SUPABASE_URL` | Supabase project URL |
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Public anon key for waitlist writes |
+| `SUPABASE_SERVICE_ROLE_KEY` | Used server-side for admin waitlist table |
+| `RESEND_API_KEY` | Confirmation email on waitlist signup |
+
+## faro-pixel package
+
+The attribution tracker lives in `packages/faro-pixel/`. It's a tiny vanilla-JS script that fires a `pageview` event to faro-engine when a page loads with `?ref=ai` or known AI referrer headers.
+
+```bash
+# Build the pixel (outputs to packages/faro-pixel/dist/ and public/pixel.js)
+npm run icons  # regenerates SVG icons
+cd packages/faro-pixel && node build.mjs
+```
+
+## Docs
+
+| Document | Contents |
+|---|---|
+| [Getting started](docs/getting-started.md) | Full setup, i18n, Supabase config |
+| [Architecture](docs/architecture.md) | App Router structure, i18n routing, pixel tracker |
+| [Deployment](docs/deployment.md) | Vercel deploy, env vars, DNS |
+| [Testing](docs/testing.md) | Vitest for pixel, Next.js linting |
+| [Conventions](docs/conventions.md) | Code style, commit format, PR process |
+
+---
+
+*Owner: Rebecca · Last reviewed: 2026-05-10 · Questions? Open an issue or ask in #engineering*
